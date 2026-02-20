@@ -1,0 +1,26 @@
+/*------ Just include this file in your styles.scss -------------------------*/
+
+@import '_defaults/_includes.scss';
+//@import '_defaults/_matthieus_mixins.scss';
+@import '_defaults/_standart_colors.scss';
+//@import '_defaults/_webkit_mixins.scss';
+//@import '_defaults/_filter_mixins.scss';
+@import '_defaults/_class_sets.scss';
+@import '_user-colors.scss';
+@import '_user-mixins.scss';
+
+@font-face {
+  font-family: 'BlinkMacSystemFont';
+  src: url('assets/fonts/BlinkMacSystemFont.eot');
+  src: url('assets/fonts/BlinkMacSystemFont.eot?#iefix') format('embedded-opentype'),
+  url('assets/fonts/BlinkMacSystemFont.woff') format('woff'),
+  url('assets/fonts/BlinkMacSystemFont.woff2') format('woff2'),
+  url('assets/fonts/BlinkMacSystemFont.ttf') format('truetype'),
+  url("assets/fonts/BlinkMacSystemFont.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@import '_partials/_header.scss';
+/* define other partials here*/
+@import '_partials/_footer.scss';

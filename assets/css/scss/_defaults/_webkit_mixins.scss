@@ -1,0 +1,616 @@
+/*------ WEBKIT MIXINS AND FUNCTIONS ---------------------------------------------------------------------------------*/
+
+@mixin prefix($property, $value) {
+  -webkit-#{$property}: #{$value};
+  -khtml-#{$property}: #{$value};
+  -moz-#{$property}: #{$value};
+  -ms-#{$property}: #{$value};
+  -o-#{$property}: #{$value};
+  #{$property}: #{$value};
+}
+
+@mixin prefix-webkit($property, $value) {
+  -webkit-#{$property}: #{$value};
+  #{$property}: #{$value};
+}
+
+@mixin prefix-moz-webkit($property, $value) {
+  -webkit-#{$property}: #{$value};
+  -moz-#{$property}: #{$value};
+}
+
+@mixin prefix-ms($property, $value) {
+  -ms-#{$property}: #{$value};
+  #{$property}: #{$value};
+}
+
+@mixin animation($value) {
+  @include prefix(animation, $value);
+}
+
+@mixin animation-delay($value) {
+  @include prefix(animation-delay, $value);
+}
+
+@mixin animation-direction($value) {
+  @include prefix(animation-direction, $value);
+}
+
+@mixin animation-duration($value) {
+  @include prefix(animation-duration, $value);
+}
+
+@mixin animation-fill-mode($value) {
+  @include prefix(animation-fill-mode, $value);
+}
+
+@mixin animation-iteration-count($value) {
+  @include prefix(animation-iteration-count, $value);
+}
+
+@mixin animation-name($value) {
+  @include prefix(animation-name, $value);
+}
+
+@mixin animation-play-state($value) {
+  @include prefix(animation-play-state, $value);
+}
+
+@mixin animation-timing-function($value) {
+  @include prefix(animation-timing-function, $value);
+}
+
+@mixin appearance($value) {
+  @include prefix(appearance, $value);
+}
+
+@mixin backdrop-filter($value) {
+  @include prefix-webkit(backdrop-filter, $value);
+}
+
+@mixin backface-visibility($value) {
+  @include prefix(backface-visibility, $value);
+}
+
+@mixin background-clip($value) {
+  @include prefix(background-clip, $value);
+}
+
+@mixin background-composite($value) {
+  -webkit-background-composite: $value;
+}
+
+@mixin background-origin($value) {
+  @include prefix(background-origin, $value);
+}
+
+@mixin background-size($value) {
+  @include prefix(background-size, $value);
+}
+
+@mixin border-bottom-left-radius($value) {
+  @include prefix-webkit(border-bottom-left-radius, $value);
+}
+
+@mixin border-bottom-right-radius($value) {
+  @include prefix-webkit(border-bottom-right-radius, $value);
+}
+
+@mixin border-horizontal-spacing($value) {
+  -webkit-border-horizontal-spacing: $value;
+}
+
+@mixin border-image($value) {
+  @include prefix(border-image, $value);
+}
+
+@mixin border-radius($value) {
+  @include prefix(border-radius, $value);
+}
+
+@mixin border-top-left-radius ($value) {
+  @include prefix-webkit(border-top-left-radius, $value);
+}
+
+@mixin border-top-right-radius ($value) {
+  @include prefix-webkit(border-top-right-radius, $value);
+}
+
+@mixin border-vertical-spacing ($value) {
+  -webkit-border-vertical-spacing: $value;
+}
+
+@mixin box-align ($value) {
+  @include prefix(box-align, $value);
+}
+
+@mixin box-direction ($value) {
+  @include prefix-moz-webkit(box-direction, $value);
+}
+
+@mixin box-flex ($value) {
+  @include prefix-moz-webkit(box-flex, $value);
+}
+
+@mixin box-flex-group ($value) {
+  -webkit-box-flex-group: $value;
+}
+
+@mixin box-lines ($value) {
+  -webkit-box-lines: $value;
+}
+
+@mixin box-ordinal-group ($value) {
+  @include prefix(box-ordinal-group, $value);
+}
+
+@mixin box-orient ($value) {
+  @include prefix-moz-webkit(box-orient, $value);
+}
+
+@mixin box-pack ($value) {
+  @include prefix-moz-webkit(box-pack, $value);
+}
+
+@mixin box-reflect ($value) {
+  -webkit-box-reflect: $value;
+}
+
+@mixin box-shadow ($value) {
+  @include prefix(box-shadow, $value);
+}
+
+@mixin box-sizing ($value) {
+  @include prefix(box-sizing, $value);
+}
+
+@mixin centralize {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@mixin column-break-after ($value) {
+  -webkit-column-break-after: $value;
+}
+
+@mixin column-break-before ($value) {
+  -webkit-column-break-before: $value;
+}
+
+@mixin column-break-inside ($value) {
+  -webkit-column-break-inside: $value;
+}
+
+@mixin column-count ($value) {
+  @include prefix(column-count, $value);
+}
+
+@mixin column-gap ($value) {
+  @include prefix(column-gap, $value);
+  //grid-column-gap: ;
+}
+
+@mixin column-rule ($value) {
+  @include prefix(column-rule, $value);
+}
+
+@mixin column-rule-color ($value) {
+  @include prefix(column-rule-color, $value);
+}
+
+@mixin column-rule-style ($value) {
+  @include prefix(column-rule-style, $value);
+}
+
+@mixin column-rule-width ($value) {
+  @include prefix(column-rule-width, $value);
+}
+
+@mixin column-width ($value) {
+  @include prefix(column-width, $value);
+}
+
+@mixin columns ($value) {
+  @include prefix(columns, $value);
+  //-ms-grid-columns: ;
+}
+
+@mixin object-fit-cover {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+@mixin dashboard-region ($value) {
+  -webkit-dashboard-region: $value;
+}
+
+@mixin display($value) {
+  display: -webkit-#{$value};
+  display: -khtml-#{$value};
+  display: -moz-#{$value};
+  display: -ms-#{$value};
+  display: -o-#{$value};
+  display: #{$value};
+}
+
+@mixin filter($value) {
+  filter: $value;
+  -webkit-filter: $value;
+  -ms-filter: $value;
+}
+
+@mixin flex ($value) {
+  @include prefix-webkit(flex, $value);
+  -ms-flex: $value; /* IE 10 */
+}
+
+@mixin flex-basis ($value) {
+  @include prefix-webkit(flex-basis, $value);
+}
+
+@mixin flex-direction($value) {
+  @include prefix-webkit(flex-direction, $value);
+}
+
+@mixin flex-flow($value) {
+  @include prefix-webkit(flex-flow, $value);
+}
+
+@mixin flex-grow($value) {
+  @include prefix-webkit(flex-grow, $value);
+}
+
+@mixin flex-shrink($value) {
+  @include prefix-webkit(flex-shrink, $value);
+}
+
+@mixin flex-wrap($value) {
+  @include prefix-webkit(flex-wrap, $value);
+}
+
+@mixin hyphens($value) {
+  -webkit-hyphens: $value;
+  -ms-hyphens: $value;
+  hyphens: $value;
+}
+
+@mixin justify-content($value) {
+  @include prefix-webkit(justify-content, $value);
+}
+
+@mixin line-break ($value) {
+  @include prefix-webkit(line-break, $value);
+  //mso-line-break-override: $value;
+}
+
+@mixin margin-bottom-collapse ($value) {
+  -webkit-margin-bottom-collapse: $value;
+}
+
+@mixin margin-collapse ($value) {
+  -webkit-margin-collapse: $value;
+}
+
+@mixin margin-start ($value) {
+  @include prefix-moz-webkit(margin-start, $value);
+}
+
+@mixin margin-top-collapse ($value) {
+  -webkit-margin-top-collapse: $value;
+}
+
+@mixin marquee ($value) {
+  @include prefix-webkit(marquee, $value);
+}
+
+@mixin marquee-direction ($value) {
+  @include prefix-webkit(marquee-direction, $value);
+}
+
+@mixin marquee-increment ($value) {
+  -webkit-marquee-increment: $value;
+}
+
+@mixin marquee-repetition ($value) {
+  @include prefix-webkit(marquee-repetition, $value);
+}
+
+@mixin marquee-speed ($value) {
+  @include prefix-webkit(marquee-speed, $value);
+}
+
+@mixin marquee-style ($value) {
+  @include prefix-webkit(marquee-style, $value);
+}
+
+@mixin mask ($value) {
+  @include prefix-webkit(mask, $value);
+}
+
+@mixin mask-attachment ($value) {
+  -webkit-mask-attachment: $value;
+}
+
+@mixin mask-box-image ($value) {
+  -webkit-mask-box-image: $value;
+}
+
+@mixin mask-clip ($value) {
+  @include prefix-webkit(mask-clip, $value);
+}
+
+@mixin mask-composite ($value) {
+  @include prefix-webkit(mask-composite, $value);
+}
+
+@mixin mask-image ($value) {
+  @include prefix-webkit(mask-image, $value);
+}
+
+@mixin mask-origin ($value) {
+  @include prefix-webkit(mask-origin, $value);
+}
+
+@mixin mask-position ($value) {
+  @include prefix-webkit(mask-position, $value);
+}
+
+@mixin mask-position-x ($value) {
+  -webkit-mask-position-x: $value;
+}
+
+@mixin mask-position-y ($value) {
+  -webkit-mask-position-y: $value;
+}
+
+@mixin mask-repeat ($value) {
+  @include prefix-webkit(mask-repeat, $value);
+}
+
+@mixin mask-size ($value) {
+  @include prefix-webkit(mask-size, $value);
+}
+
+@mixin nofocus {
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin nbsp-mode ($value) {
+  -webkit-nbsp-mode: $value;
+}
+
+@mixin object-fit($value) {
+  -o-object-fit: $value;
+  object-fit: $value;
+}
+
+@mixin order ($value) {
+  -webkit-order: $value;
+  order: $value;
+}
+
+@mixin outline-color ($value) {
+  outline-color: $value;
+  -moz-outline-color: $value;
+}
+
+@mixin padding-start ($value) {
+  @include prefix-moz-webkit(padding-start, $value)
+}
+
+@mixin perspective ($value) {
+  @include prefix(perspective, $value);
+}
+
+@mixin perspective-origin ($value) {
+  @include prefix(perspective-origin, $value);
+}
+
+@mixin rtl-ordering ($value) {
+  -webkit-rtl-ordering: $value;
+}
+
+@mixin tab-size ($value) {
+  tab-size: $value;
+  -moz-tab-size: $value;
+}
+
+@mixin tap-highlight-color ($value) {
+  -webkit-tap-highlight-color: $value;
+}
+
+@mixin text-align-center {
+  text-align: center;
+  text-align: -webkit-center;
+  text-align: -moz-center;
+}
+
+@mixin text-align-left {
+  text-align: left;
+  text-align: -webkit-left;
+  text-align: -moz-left;
+}
+
+@mixin text-align-right {
+  text-align: right;
+  text-align: -webkit-right;
+  text-align: -moz-right;
+}
+
+@mixin text-decoration-none {
+  text-decoration: none;
+  text-decoration: -moz-none;
+}
+
+@mixin text-decoration-color ($value) {
+  text-decoration-color: $value;
+  -moz-text-decoration-color: $value;
+  -webkit-text-decoration-color: $value;
+}
+
+@mixin text-decoration-line ($value) {
+  text-decoration-line: $value;
+  -moz-text-decoration-line: $value;
+
+}
+
+@mixin text-decoration-style ($value) {
+  text-decoration-style: $value;
+  -moz-text-decoration-style: $value;
+  -webkit-text-decoration-style: $value;
+}
+
+@mixin text-fill-color ($value) {
+  -webkit-text-fill-color: $value;
+}
+
+@mixin text-security ($value) {
+  -webkit-text-security: $value;
+}
+
+@mixin text-size-adjust ($value) {
+  @include prefix(text-size-adjust, $value);
+}
+
+@mixin text-stroke ($value) {
+  -webkit-text-stroke: $value;
+}
+
+@mixin text-stroke-color ($value) {
+  -webkit-text-stroke-color: $value;
+}
+
+@mixin text-stroke-width ($value) {
+  -webkit-text-stroke-width: $value;
+}
+
+@mixin touch-callout ($value) {
+  -webkit-touch-callout: $value;
+}
+
+@mixin transform ($value) {
+  @include prefix(transform, $value);
+  //////////////////////n
+}
+
+@mixin transform-origin ($value) {
+  @include prefix(transform-origin, $value);
+}
+
+@mixin transform-origin-x ($value) {
+  @include prefix-ms(transform-origin-x, $value);
+}
+
+@mixin transform-origin-y ($value) {
+  @include prefix-ms(transform-origin-y, $value);
+}
+
+@mixin transform-origin-z ($value) {
+  @include prefix-ms(transform-origin-z, $value);
+}
+
+@mixin transform-style ($value) {
+  @include prefix(transform-style, $value);
+}
+
+@mixin transition ($value) {
+  @include prefix(transition, $value);
+}
+
+@mixin transition-delay($value) {
+  @include prefix(transition-delay, $value);
+}
+
+@mixin transition-duration ($value) {
+  @include prefix(transition-duration, $value);
+}
+
+@mixin transition-property ($value) {
+  @include prefix(transition-property, $value);
+}
+
+@mixin transition-timing-function ($value) {
+  @include prefix(transition-timing-function, $value);
+}
+
+@mixin word-wrap($value) {
+  @include prefix(word-wrap, $value);
+}
+
+@mixin writing-mode($value) {
+  @include prefix(writing-mode, $value);
+}
+
+@mixin user-drag ($value) {
+  -webkit-user-drag: $value;
+}
+
+@mixin user-modify ($value) {
+  @include prefix(user-modify, $value);
+}
+
+@mixin user-select ($value) {
+  -webkit-touch-callout: $value; /* iOS Safari */
+  -webkit-user-select: $value; /* Safari */
+  -khtml-user-select: $value; /* Konqueror HTML */
+  -moz-user-select: $value; /* Firefox */
+  -ms-user-select: $value; /* Internet Explorer/Edge */
+  user-select: $value; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+//Keyframes Mixin
+@mixin keyframes($name) {
+  @-khtml-keyframes #{$name} {
+    @content;
+  }
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @-o-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+//Selection Mixin
+@mixin selection {
+  ::selection {
+    @content;
+  }
+  ::-moz-selection {
+    @content;
+  }
+}
+
+//Placeholder Mixin
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    @content;
+  }
+  &::-ms-input-placeholder {
+    @content;
+  }
+  &::-moz-placeholder { /* Firefox 18- */
+    @content;
+  }
+}

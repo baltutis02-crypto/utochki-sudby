@@ -1,0 +1,154 @@
+/*------ HELPFUL CLASSES ---------------------------------------------------------------------------------------------*/
+
+@import '_webkit_mixins.scss';
+
+//-=-=-=- PADDINGS IN CONTAINER -=-=-=-//
+.no-rp
+{
+  padding-right: 0;
+  @media (max-width: 991.98px) {
+    padding-right: 15px;
+  }
+}
+
+.no-lp
+{
+  padding-left: 0;
+  @media (max-width: 991.98px) {
+    padding-left: 15px;
+  }
+}
+
+.no-lp-m
+{
+  padding-left: 15px;
+  @media (max-width: 991.98px) {
+    padding-left: 0px;
+  }
+}
+
+.no-rp-m
+{
+  padding-right: 15px;
+  @media (max-width: 991.98px) {
+    padding-right: 0px;
+  }
+}
+
+.no-lp-d
+{
+  padding-left: 0px;
+  @media (max-width: 991.98px) {
+    padding-left: 15px;
+  }
+}
+
+.no-rp-d
+{
+  padding-right: 0px;
+  @media (max-width: 991.98px) {
+    padding-right: 15px;
+  }
+}
+
+//-=-=-=- POSITION -=-=-=-//
+.pa
+{
+  position: absolute;
+}
+
+.pr
+{
+  position: relative;
+}
+
+.pf
+{
+  position: fixed;
+}
+
+.ps
+{
+  position: sticky;
+  position: -webkit-sticky;
+}
+
+//-=-=-=- ROWS -=-=-=-//
+.row-eq-height
+{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.row-no-margin
+{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+//-=-=-=- SCREEN WIDTH -=-=-=-//
+.mobile-only
+{
+  display: none !important;
+  @media (max-width: 991.98px) {
+    display: block !important;
+  }
+}
+
+.desktop-only
+{
+  display: block !important;
+  @media (max-width: 991.98px) {
+    display: none !important;
+  }
+}
+
+//-=-=-=- POSITIONING -=-=-=-//
+.stretched-wrap {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.stretched {
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+  width: auto;
+}
+
+.centered-wrap {
+  position: absolute;
+}
+
+.centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  @include transform(translate(-50%, -50%));
+}
+
+//-=-=-=- OTHER -=-=-=-//
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}

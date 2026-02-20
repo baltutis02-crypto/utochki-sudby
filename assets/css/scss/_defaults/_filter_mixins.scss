@@ -1,0 +1,233 @@
+/*------ FILTER MIXINS AND FUNCTIONS ---------------------------------------------------------------------------------*/
+
+@mixin alpha($value)
+{
+  -webkit-filter: alpha($value);
+  -moz-filter: alpha($value);
+  -o-filter: alpha($value);
+  -ms-filter: alpha($value);
+  filter: alpha($value);
+}
+
+@mixin basicImage($value)
+{
+  -webkit-filter: basicImage($value);
+  -moz-filter: basicImage($value);
+  -o-filter: basicImage($value);
+  -ms-filter: basicImage($value);
+  filter: basicImage($value);
+}
+
+@mixin blur($value)
+{
+  -webkit-filter: blur($value);
+  -moz-filter: blur($value);
+  -o-filter: blur($value);
+  -ms-filter: blur($value);
+  filter: blur($value);
+}
+
+@mixin brightness($value)
+{
+  -webkit-filter: brightness($value);
+  -moz-filter: brightness($value);
+  -o-filter: brightness($value);
+  -ms-filter: brightness($value);
+  filter: brightness($value);
+}
+
+@mixin chroma($value)
+{
+  -webkit-filter: chroma($value);
+  -moz-filter: chroma($value);
+  -o-filter: chroma($value);
+  -ms-filter: chroma($value);
+  filter: chroma($value);
+}
+
+@mixin contrast($value)
+{
+  -webkit-filter: contrast($value);
+  -moz-filter: contrast($value);
+  -o-filter: contrast($value);
+  -ms-filter: contrast($value);
+  filter: contrast($value);
+}
+
+@mixin dropShadow($value)
+{
+  -webkit-filter: dropShadow($value);
+  -moz-filter: dropShadow($value);
+  -o-filter: dropShadow($value);
+  -ms-filter: dropShadow($value);
+  filter: dropShadow($value);
+}
+
+@mixin emboss($value)
+{
+  -webkit-filter: emboss($value);
+  -moz-filter: emboss($value);
+  -o-filter: emboss($value);
+  -ms-filter: emboss($value);
+  filter: emboss($value);
+}
+
+@mixin engrave($value)
+{
+  -webkit-filter: engrave($value);
+  -moz-filter: engrave($value);
+  -o-filter: engrave($value);
+  -ms-filter: engrave($value);
+  filter: engrave($value);
+}
+
+@mixin grayscale($value) {
+  -webkit-filter: grayscale($value);
+  -moz-filter: grayscale($value);
+  -o-filter: grayscale($value);
+  -ms-filter: grayscale($value);
+  filter: grayscale($value);
+}
+
+@mixin glow($value)
+{
+  -webkit-filter: glow($value);
+  -moz-filter: glow($value);
+  -o-filter: glow($value);
+  -ms-filter: glow($value);
+  filter: glow($value);
+}
+
+@mixin gradient($value)
+{
+  -webkit-filter: gradient($value);
+  -moz-filter: gradient($value);
+  -o-filter: gradient($value);
+  -ms-filter: gradient($value);
+  filter: gradient($value);
+}
+
+@mixin hue-rotate($value)
+{
+  -webkit-filter: hue-rotate($value);
+  -moz-filter: hue-rotate($value);
+  -o-filter: hue-rotate($value);
+  -ms-filter: hue-rotate($value);
+  filter: hue-rotate($value);
+}
+
+@mixin ICMFilter($value)
+{
+  -webkit-filter: ICMFilter($value);
+  -moz-filter: ICMFilter($value);
+  -o-filter: ICMFilter($value);
+  -ms-filter: ICMFilter($value);
+  filter: ICMFilter($value);
+}
+
+@mixin invert($value)
+{
+  -webkit-filter: invert($value);
+  -moz-filter: invert($value);
+  -o-filter: invert($value);
+  -ms-filter: invert($value);
+  filter: invert($value);
+}
+
+@mixin light($value)
+{
+  -webkit-filter: light($value);
+  -moz-filter: light($value);
+  -o-filter: light($value);
+  -ms-filter: light($value);
+  filter: light($value);
+}
+
+@mixin maskFilter($value)
+{
+  -webkit-filter: maskFilter($value);
+  -moz-filter: maskFilter($value);
+  -o-filter: maskFilter($value);
+  -ms-filter: maskFilter($value);
+  filter: maskFilter($value);
+}
+
+@mixin matrix($value)
+{
+  -webkit-filter: matrix($value);
+  -moz-filter: matrix($value);
+  -o-filter: matrix($value);
+  -ms-filter: matrix($value);
+  filter: matrix($value);
+}
+
+@mixin motionBlur($value)
+{
+  -webkit-filter: motionBlur($value);
+  -moz-filter: motionBlur($value);
+  -o-filter: motionBlur($value);
+  -ms-filter: motionBlur($value);
+  filter: motionBlur($value);
+}
+
+@mixin noselect($value)
+{
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+@mixin opacity($value)
+{
+  opacity: $value/100;
+  -moz-opacity: $value/100;
+  filter: alpha(opacity=$value);
+}
+
+@mixin saturate($value)
+{
+  -webkit-filter: saturate($value);
+  -moz-filter: saturate($value);
+  -o-filter: saturate($value);
+  -ms-filter: saturate($value);
+  filter: saturate($value);
+}
+
+@mixin sepia($value)
+{
+  -webkit-filter: sepia($value);
+  -moz-filter: sepia($value);
+  -o-filter: sepia($value);
+  -ms-filter: sepia($value);
+  filter: sepia($value);
+}
+
+@mixin shadow($value)
+{
+  -webkit-filter: shadow($value);
+  -moz-filter: shadow($value);
+  -o-filter: shadow($value);
+  -ms-filter: shadow($value);
+  filter: shadow($value);
+}
+
+@mixin furl($value)
+{
+  -webkit-filter: url($value);
+  -moz-filter: url($value);
+  -o-filter: url($value);
+  -ms-filter: url($value);
+  filter: url($value);
+}
+
+@mixin wave($value)
+{
+  -webkit-filter: wave($value);
+  -moz-filter: wave($value);
+  -o-filter: wave($value);
+  -ms-filter: wave($value);
+  filter: wave($value);
+}
