@@ -1,10 +1,10 @@
 /*------ Just include this file in your styles.scss -------------------------*/
 
 @import '_defaults/_includes.scss';
-//@import '_defaults/_matthieus_mixins.scss';
+@import '_defaults/_matthieus_mixins.scss';
 @import '_defaults/_standart_colors.scss';
-//@import '_defaults/_webkit_mixins.scss';
-//@import '_defaults/_filter_mixins.scss';
+@import '_defaults/_webkit_mixins.scss';
+@import '_defaults/_filter_mixins.scss';
 @import '_defaults/_class_sets.scss';
 @import '_user-colors.scss';
 @import '_user-mixins.scss';
@@ -21,6 +21,119 @@
   font-style: normal;
 }
 
+$utochki-yellow: #FFD86F; // 255, 216, 111
+$utochki-neon-pink: #FF80E5; // 255, 128, 229
+$utochki-white: #DEDCFF; // 222, 220, 255
+$utochki-baby-pink: #FFBCEE; // 255, 188, 238
+$utochki-moonlight: #B8B6D9; // 8, 6, 9
+
+$utochki-yellow-5: rgba(255, 220, 140, 0.05);
+$utochki-yellow-10: rgba(255, 220, 140, 0.1);
+$utochki-yellow-15: rgba(255, 220, 140, 0.15);
+$utochki-yellow-20: rgba(255, 220, 140, 0.2);
+$utochki-yellow-25: rgba(255, 220, 140, 0.25);
+$utochki-yellow-30: rgba(255, 220, 140, 0.3);
+$utochki-yellow-35: rgba(255, 220, 140, 0.35);
+$utochki-yellow-40: rgba(255, 220, 140, 0.4);
+$utochki-yellow-45: rgba(255, 220, 140, 0.45);
+$utochki-yellow-50: rgba(255, 220, 140, 0.5);
+$utochki-yellow-55: rgba(255, 220, 140, 0.55);
+$utochki-yellow-60: rgba(255, 220, 140, 0.6);
+$utochki-yellow-65: rgba(255, 220, 140, 0.65);
+$utochki-yellow-70: rgba(255, 220, 140, 0.7);
+$utochki-yellow-75: rgba(255, 220, 140, 0.75);
+$utochki-yellow-80: rgba(255, 220, 140, 0.8);
+$utochki-yellow-85: rgba(255, 220, 140, 0.85);
+$utochki-yellow-90: rgba(255, 220, 140, 0.9);
+$utochki-yellow-95: rgba(255, 220, 140, 0.95);
+
+$utochki-navy-blue-5: rgba(80, 140, 255, 0.05);
+$utochki-navy-blue-10: rgba(80, 140, 255, 0.1);
+$utochki-navy-blue-15: rgba(80, 140, 255, 0.15);
+$utochki-navy-blue-20: rgba(80, 140, 255, 0.2);
+$utochki-navy-blue-25: rgba(80, 140, 255, 0.25);
+$utochki-navy-blue-30: rgba(80, 140, 255, 0.3);
+$utochki-navy-blue-35: rgba(80, 140, 255, 0.35);
+$utochki-navy-blue-40: rgba(80, 140, 255, 0.4);
+$utochki-navy-blue-45: rgba(80, 140, 255, 0.45);
+$utochki-navy-blue-50: rgba(80, 140, 255, 0.5);
+$utochki-navy-blue-55: rgba(80, 140, 255, 0.55);
+$utochki-navy-blue-60: rgba(80, 140, 255, 0.6);
+$utochki-navy-blue-65: rgba(80, 140, 255, 0.65);
+$utochki-navy-blue-70: rgba(80, 140, 255, 0.7);
+$utochki-navy-blue-75: rgba(80, 140, 255, 0.75);
+$utochki-navy-blue-80: rgba(80, 140, 255, 0.8);
+$utochki-navy-blue-85: rgba(80, 140, 255, 0.85);
+$utochki-navy-blue-90: rgba(80, 140, 255, 0.9);
+$utochki-navy-blue-95: rgba(80, 140, 255, 0.95);
+
+$utochki-turquise-5: rgba(111, 207, 255, 0.05);
+$utochki-turquise-10: rgba(111, 207, 255, 0.1);
+$utochki-turquise-15: rgba(111, 207, 255, 0.15);
+$utochki-turquise-20: rgba(111, 207, 255, 0.2);
+$utochki-turquise-25: rgba(111, 207, 255, 0.25);
+$utochki-turquise-30: rgba(111, 207, 255, 0.3);
+$utochki-turquise-35: rgba(111, 207, 255, 0.35);
+$utochki-turquise-40: rgba(111, 207, 255, 0.4);
+$utochki-turquise-45: rgba(111, 207, 255, 0.45);
+$utochki-turquise-50: rgba(111, 207, 255, 0.5);
+$utochki-turquise-55: rgba(111, 207, 255, 0.55);
+$utochki-turquise-60: rgba(111, 207, 255, 0.6);
+$utochki-turquise-65: rgba(111, 207, 255, 0.65);
+$utochki-turquise-70: rgba(111, 207, 255, 0.7);
+$utochki-turquise-75: rgba(111, 207, 255, 0.75);
+$utochki-turquise-80: rgba(111, 207, 255, 0.8);
+$utochki-turquise-85: rgba(111, 207, 255, 0.85);
+$utochki-turquise-90: rgba(111, 207, 255, 0.9);
+$utochki-turquise-95: rgba(111, 207, 255, 0.95);
+
+$utochki-neon-pink-5: rgba(255, 128, 229, 0.05);
+$utochki-neon-pink-10: rgba(255, 128, 229, 0.1);
+$utochki-neon-pink-15: rgba(255, 128, 229, 0.15);
+$utochki-neon-pink-20: rgba(255, 128, 229, 0.2);
+$utochki-neon-pink-25: rgba(255, 128, 229, 0.25);
+$utochki-neon-pink-30: rgba(255, 128, 229, 0.3);
+$utochki-neon-pink-35: rgba(255, 128, 229, 0.35);
+$utochki-neon-pink-40: rgba(255, 128, 229, 0.4);
+$utochki-neon-pink-45: rgba(255, 128, 229, 0.45);
+$utochki-neon-pink-50: rgba(255, 128, 229, 0.5);
+$utochki-neon-pink-55: rgba(255, 128, 229, 0.55);
+$utochki-neon-pink-60: rgba(255, 128, 229, 0.6);
+$utochki-neon-pink-65: rgba(255, 128, 229, 0.65);
+$utochki-neon-pink-70: rgba(255, 128, 229, 0.7);
+$utochki-neon-pink-75: rgba(255, 128, 229, 0.75);
+$utochki-neon-pink-80: rgba(255, 128, 229, 0.8);
+$utochki-neon-pink-85: rgba(255, 128, 229, 0.85);
+$utochki-neon-pink-90: rgba(255, 128, 229, 0.9);
+$utochki-neon-pink-95: rgba(255, 128, 229, 0.95);
+
+$utochki-dark-5: rgba(5, 6, 22, 0.05);
+$utochki-dark-10: rgba(5, 6, 22, 0.1);
+$utochki-dark-15: rgba(5, 6, 22, 0.15);
+$utochki-dark-20: rgba(5, 6, 22, 0.2);
+$utochki-dark-25: rgba(5, 6, 22, 0.25);
+$utochki-dark-30: rgba(5, 6, 22, 0.3);
+$utochki-dark-35: rgba(5, 6, 22, 0.35);
+$utochki-dark-40: rgba(5, 6, 22, 0.4);
+$utochki-dark-45: rgba(5, 6, 22, 0.45);
+$utochki-dark-50: rgba(5, 6, 22, 0.5);
+$utochki-dark-55: rgba(5, 6, 22, 0.55);
+$utochki-dark-60: rgba(5, 6, 22, 0.6);
+$utochki-dark-65: rgba(5, 6, 22, 0.65);
+$utochki-dark-70: rgba(5, 6, 22, 0.7);
+$utochki-dark-75: rgba(5, 6, 22, 0.75);
+$utochki-dark-80: rgba(5, 6, 22, 0.8);
+$utochki-dark-85: rgba(5, 6, 22, 0.85);
+$utochki-dark-90: rgba(5, 6, 22, 0.9);
+$utochki-dark-95: rgba(5, 6, 22, 0.95);
+
+
 @import '_partials/_header.scss';
-/* define other partials here*/
+
+@import '_partials/_top-image-block.scss';
+@import '_partials/_text-card-carousel-block.scss';
+@import '_partials/_text-block.scss';
+@import '_partials/_duck-list-block.scss';
+@import "_partials/_tag-list-block.scss";
+
 @import '_partials/_footer.scss';

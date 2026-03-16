@@ -1,0 +1,70 @@
+.top-image-block
+{
+  .container
+  {
+    .row
+    {
+
+    }
+  }
+
+  .overhead-txt
+  {
+    align-items: center;
+    gap: 8px;
+    padding: 4px 10px;
+    background: rgba($white, 0.05);
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: $utochki-neon-pink;
+    border: 1px solid $utochki-neon-pink-40;
+    @include display(inline-flex);
+    @include box-shadow(0 0 10px $utochki-neon-pink-40);
+    @include border-radius(999px);
+  }
+
+  .text-wrap
+  {
+    position: relative;
+    top: 50%;
+    @include transform(translateY(-50%));
+    .text
+    {
+      width: 95%;
+      margin-bottom: 12px;
+    }
+  }
+  .img-wrap
+  {
+    border: 1px solid rgba($white, 0.15);
+    padding: 16px;
+    background: radial-gradient(circle at top left, $utochki-neon-pink-35, transparent 55%), radial-gradient(circle at bottom right, $utochki-turquise-30, transparent 60%), $utochki-dark-90;
+    text-align: center;
+    min-height: 220px;
+    max-height: 660px;
+    align-items: center;
+    box-shadow: 0 0 20px $utochki-neon-pink-35, 0 0 40px $utochki-navy-blue-25;
+    //@include box-shadow(0 0 20px $utochki-neon-pink-35, 0 0 40px $utochki-navy-blue-25);
+    @include display(flex);
+    @include justify-content(center);
+    @include border-radius(24px);
+    img
+    {
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 0 18px $utochki-yellow-45;
+      @include border-radius(18px);
+    }
+  }
+  .btn-wrap
+  {
+    gap: 10px;
+    margin-top: 18px;
+    @include display(flex);
+    @include flex-wrap(wrap);
+    a.btn
+    {
+
+    }
+  }
+}

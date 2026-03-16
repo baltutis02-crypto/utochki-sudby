@@ -10,9 +10,81 @@
 
     /* ===== КОСМИЧЕСКИЙ ФОН СО ЗВЁЗДАМИ И СИЯНИЕМ (БЕЗ АНІМАЦИЙ) ===== */
 
+    body {
+      background: #050616;
+      position: relative;
+      overflow-x: hidden;
+      color: #E8E6FF;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
 
+    /* Много звёзд + золотые искры (слой 1) */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -20%;
+      left: -20%;
+      width: 160%;
+      height: 160%;
+      background-image:
+        /* белые мелкие звезды */
+              radial-gradient(1px 1px at 10% 20%, #ffffff 80%, transparent 82%),
+              radial-gradient(1px 1px at 30% 70%, #ffffff 80%, transparent 82%),
+              radial-gradient(1px 1px at 50% 30%, #ffffff 80%, transparent 82%),
+              radial-gradient(1px 1px at 80% 40%, #ffffff 80%, transparent 82%),
+              radial-gradient(1px 1px at 90% 80%, #ffffff 80%, transparent 82%),
+              radial-gradient(1px 1px at 20% 90%, #ffffff 80%, transparent 82%),
+              radial-gradient(1px 1px at 60% 10%, #ffffff 80%, transparent 82%),
+              radial-gradient(1px 1px at 40% 60%, #ffffff 80%, transparent 82%),
+              radial-gradient(1px 1px at 70% 15%, #ffffff 80%, transparent 82%),
+              radial-gradient(1px 1px at 15% 55%, #ffffff 80%, transparent 82%),
+              radial-gradient(1px 1px at 85% 25%, #ffffff 80%, transparent 82%),
+              radial-gradient(1px 1px at 25% 35%, #ffffff 80%, transparent 82%),
+                /* золотые искры */
+              radial-gradient(2px 2px at 15% 50%, #ffd86f 80%, transparent 82%),
+              radial-gradient(2px 2px at 70% 20%, #ffd86f 80%, transparent 82%),
+              radial-gradient(2px 2px at 85% 75%, #ffd86f 80%, transparent 82%),
+              radial-gradient(2px 2px at 35% 15%, #ffd86f 80%, transparent 82%),
+              radial-gradient(2px 2px at 50% 95%, #ffd86f 80%, transparent 82%);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      opacity: 0.35;
+      z-index: -3;
+      pointer-events: none;
+    }
 
-
+    /* Более крупные звезды и мягкое фиолетовое сияние (слой 2) */
+    body::after {
+      content: "";
+      position: fixed;
+      top: -20%;
+      left: -20%;
+      width: 160%;
+      height: 160%;
+      background-image:
+              radial-gradient(3px 3px at 15% 40%, #ffffff 80%, transparent 82%),
+              radial-gradient(2px 2px at 45% 80%, #ffffff 80%, transparent 82%),
+              radial-gradient(2px 2px at 70% 25%, #ffffff 80%, transparent 82%),
+              radial-gradient(3px 3px at 85% 60%, #ffffff 80%, transparent 82%),
+              radial-gradient(2px 2px at 25% 10%, #ffffff 80%, transparent 82%),
+              radial-gradient(3px 3px at 55% 50%, #ffffff 80%, transparent 82%),
+              radial-gradient(2px 2px at 75% 90%, #ffffff 80%, transparent 82%),
+                /* фиолетово-розовое сияние по углам */
+              radial-gradient(circle at 10% 0%, rgba(255,128,229,0.3), transparent 60%),
+              radial-gradient(circle at 100% 100%, rgba(111,207,255,0.28), transparent 60%),
+              radial-gradient(circle at 50% 120%, rgba(255,216,111,0.22), transparent 65%);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      opacity: 0.5;
+      z-index: -2;
+      pointer-events: none;
+      box-shadow:
+              inset 0 0 250px 50px rgba(255,128,229,0.18),
+              inset 0 0 350px 120px rgba(110,80,255,0.16),
+              inset 0 0 450px 160px rgba(255,220,140,0.12);
+    }
 
     a { color: inherit; text-decoration: none; }
 
@@ -170,17 +242,17 @@
       border: 1px solid rgba(255,255,255,0.15);
       padding: 16px;
       background:
-        radial-gradient(circle at top left, rgba(255,128,229,0.35), transparent 55%),
-        radial-gradient(circle at bottom right, rgba(111,207,255,0.3), transparent 60%),
-        rgba(5,6,22,0.9);
+              radial-gradient(circle at top left, rgba(255,128,229,0.35), transparent 55%),
+              radial-gradient(circle at bottom right, rgba(111,207,255,0.3), transparent 60%),
+              rgba(5,6,22,0.9);
       text-align: center;
       min-height: 220px;
       display: flex;
       align-items: center;
       justify-content: center;
       box-shadow:
-        0 0 20px rgba(255,128,229,0.35),
-        0 0 40px rgba(80,140,255,0.24);
+              0 0 20px rgba(255,128,229,0.35),
+              0 0 40px rgba(80,140,255,0.24);
     }
 
     .hero-image img {
@@ -205,8 +277,8 @@
       border-radius: 18px;
       border: 1px solid rgba(255,255,255,0.12);
       background: radial-gradient(circle at top left, rgba(255,128,229,0.15), transparent 55%),
-                  radial-gradient(circle at bottom right, rgba(111,207,255,0.12), transparent 60%),
-                  rgba(20,18,40,0.82);
+      radial-gradient(circle at bottom right, rgba(111,207,255,0.12), transparent 60%),
+      rgba(20,18,40,0.82);
       padding: 16px 18px;
       backdrop-filter: blur(6px);
       box-shadow: 0 0 12px rgba(255, 128, 229, 0.25);
@@ -312,8 +384,8 @@
       border: 2px solid rgba(255,255,255,0.35);
       margin: 0 auto;
       box-shadow:
-        0 0 18px rgba(255,128,229,0.6),
-        0 0 28px rgba(132,178,255,0.4);
+              0 0 18px rgba(255,128,229,0.6),
+              0 0 28px rgba(132,178,255,0.4);
     }
     .author-avatar img {
       width: 100%;
@@ -375,14 +447,14 @@
       .author-block {
         grid-template-columns: 1fr;
       }
-}
+    }
     /* Картинки в карточках проектов */
     .card img {
-        width: 100%;
-        height: 380px;
-        object-fit: cover;
-        border-radius: 24px;
-        margin-bottom: 16px;
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 24px;
+      margin-bottom: 16px;
     }
   </style>
 
@@ -394,327 +466,326 @@
   </script>
 </head>
 <body>
-  <div class="wrapper">
-    <header>
-      <div class="logo-block">
-        <div class="logo">🦆 Уточки судьбы</div>
-        <div class="tagline">Магия для тех, кто устал, но всё ещё держится.</div>
-      </div>
-      <nav class="nav">
-        <a onclick="scrollToId('about')">О колоде</a>
-        <a onclick="scrollToId('how')">Как пользоваться</a>
-        <a onclick="scrollToId('gallery')">Примеры карт</a>
-        <a onclick="scrollToId('projects')">Проекты</a>
-        <a onclick="scrollToId('order')">Купить</a>
-        <a onclick="scrollToId('author')">Об авторе</a>
-      </nav>
-    </header>
+<div class="wrapper">
+  <header>
+    <div class="logo-block">
+      <div class="logo">🦆 Уточки судьбы</div>
+      <div class="tagline">Магия для тех, кто устал, но всё ещё держится.</div>
+    </div>
+    <nav class="nav">
+      <a onclick="scrollToId('about')">О колоде</a>
+      <a onclick="scrollToId('how')">Как пользоваться</a>
+      <a onclick="scrollToId('gallery')">Примеры карт</a>
+      <a onclick="scrollToId('projects')">Проекты</a>
+      <a onclick="scrollToId('order')">Купить</a>
+      <a onclick="scrollToId('author')">Об авторе</a>
+    </nav>
+  </header>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div>
-        <div class="hero-badge">✨ авторская вселенная уточек, магии и самоиронии</div>
-        <h1 class="hero-title">«Уточки судьбы» — целая вселенная уточек и магии</h1>
-        <p class="hero-slogan">Магия для тех, кто устал, но всё ещё держится.</p>
-        <p class="hero-sub">
-          Всё началось с авторской колоды из 55 карт с утками, которые пережили дедлайны, токсичных коллег, бывших и ретроградный Меркурий.
-        </p>
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <div class="hero-badge">✨ авторская вселенная уточек, магии и самоиронии</div>
+      <h1 class="hero-title">«Уточки судьбы» — целая вселенная уточек и магии</h1>
+      <p class="hero-slogan">Магия для тех, кто устал, но всё ещё держится.</p>
+      <p class="hero-sub">
+        Всё началось с авторской колоды из 55 карт с утками, которые пережили дедлайны, токсичных коллег, бывших и ретроградный Меркурий.
+      </p>
+      <p class="text-muted">
+        Сейчас во вселенной «Уточек судьбы» рождаются новые проекты: блокнот, настольная игра «Утки в Пограничье», «Уточки Таро» и другие идеи, которые уже стоят в очереди в печать.
+      </p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;">
+        <button class="btn" onclick="scrollToId('order')">
+          Купить на Wildberries
+        </button>
+        <button class="btn btn-outline" onclick="scrollToId('gallery')">
+          Посмотреть карты
+        </button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <!-- Обложка колоды: файл cover.png рядом с index.html -->
+      <img src="cover.png" alt="Обложка колоды Уточки судьбы">
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>Что такое «Уточки судьбы»?</h2>
+    <p class="text-muted">
+      «Уточки судьбы» — это и авторская колода-оракул, и растущий бренд, в котором каждая утка — отдельный персонаж
+      со своим характером, фразой и настроением. Мы собираем вокруг них целую вселенную: карты, блокноты, будущую
+      настольную игру и колоду Таро. Никакого заумного языка — только символы, юмор и честные сообщения.
+    </p>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-tag">Философия</div>
+        <div class="card-title">Юмор + честность</div>
         <p class="text-muted">
-          Сейчас во вселенной «Уточек судьбы» рождаются новые проекты: блокнот, настольная игра «Утки в Пограничье», «Уточки Таро» и другие идеи, которые уже стоят в очереди в печать.
+          Карта может поддержать, а может мягко ткнуть в правду. Там, где стало смешно и чуть больно — обычно и есть точка роста.
         </p>
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;">
-          <button class="btn" onclick="scrollToId('order')">
-            Купить на Wildberries
-          </button>
-          <button class="btn btn-outline" onclick="scrollToId('gallery')">
-            Посмотреть карты
-          </button>
-        </div>
       </div>
-      <div class="hero-image">
-        <!-- Обложка колоды: файл cover.png рядом с index.html -->
-        <img src="cover.png" alt="Обложка колоды Уточки судьбы">
+      <div class="card">
+        <div class="card-tag">Состав</div>
+        <div class="card-title">55 уникальных уток</div>
+        <p class="text-muted">
+          Офис, любовь, самооценка, прокрастинация, ночь, тень и другие сферы жизни, в которых мы все периодически тонем.
+          Подробные правила и примеры раскладов есть ниже на этой странице.
+        </p>
       </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <h2>Что такое «Уточки судьбы»?</h2>
-      <p class="text-muted">
-        «Уточки судьбы» — это и авторская колода-оракул, и растущий бренд, в котором каждая утка — отдельный персонаж
-        со своим характером, фразой и настроением. Мы собираем вокруг них целую вселенную: карты, блокноты, будущую
-        настольную игру и колоду Таро. Никакого заумного языка — только символы, юмор и честные сообщения.
-      </p>
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-tag">Философия</div>
-          <div class="card-title">Юмор + честность</div>
-          <p class="text-muted">
-            Карта может поддержать, а может мягко ткнуть в правду. Там, где стало смешно и чуть больно — обычно и есть точка роста.
-          </p>
-        </div>
-        <div class="card">
-          <div class="card-tag">Состав</div>
-          <div class="card-title">55 уникальных уток</div>
-          <p class="text-muted">
-            Офис, любовь, самооценка, прокрастинация, ночь, тень и другие сферы жизни, в которых мы все периодически тонем.
-            Подробные правила и примеры раскладов есть ниже на этой странице.
-          </p>
-        </div>
-        <div class="card">
-          <div class="card-tag">Простота</div>
-          <div class="card-title">Без опыта и инициаций</div>
-          <p class="text-muted">
-            Не нужно быть тарологом. Достаточно задать вопрос, вытянуть карту и посмотреть, с чем её послание у тебя ассоциируется.
-          </p>
-        </div>
+      <div class="card">
+        <div class="card-tag">Простота</div>
+        <div class="card-title">Без опыта и инициаций</div>
+        <p class="text-muted">
+          Не нужно быть тарологом. Достаточно задать вопрос, вытянуть карту и посмотреть, с чем её послание у тебя ассоциируется.
+        </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- HOW IT WORKS / RULES -->
-    <section id="how">
-      <h2>Как пользоваться колодой</h2>
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-title">1. Задай вопрос</div>
-          <p class="text-muted">
-            Про отношения, работу, деньги, переезд, привычки — всё, что сейчас крутится в голове. Чем конкретнее вопрос, тем точнее ощущается ответ.
-          </p>
-        </div>
-        <div class="card">
-          <div class="card-title">2. Потасуй уточек</div>
-          <p class="text-muted">
-            С намерением. Можно с мантрами, можно с матами — уточки понимают оба языка. Остановись, когда почувствуешь «всё, хватит».
-          </p>
-        </div>
-        <div class="card">
-          <div class="card-title">3. Вытащи карту</div>
-          <p class="text-muted">
-            Посмотри на иллюстрацию, прочитай фразу и отметь, какие мысли и чувства поднимаются. Там и спрятан твой ответ.
-          </p>
-        </div>
+  <!-- HOW IT WORKS / RULES -->
+  <section id="how">
+    <h2>Как пользоваться колодой</h2>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-title">1. Задай вопрос</div>
+        <p class="text-muted">
+          Про отношения, работу, деньги, переезд, привычки — всё, что сейчас крутится в голове. Чем конкретнее вопрос, тем точнее ощущается ответ.
+        </p>
+      </div>
+      <div class="card">
+        <div class="card-title">2. Потасуй уточек</div>
+        <p class="text-muted">
+          С намерением. Можно с мантрами, можно с матами — уточки понимают оба языка. Остановись, когда почувствуешь «всё, хватит».
+        </p>
+      </div>
+      <div class="card">
+        <div class="card-title">3. Вытащи карту</div>
+        <p class="text-muted">
+          Посмотри на иллюстрацию, прочитай фразу и отметь, какие мысли и чувства поднимаются. Там и спрятан твой ответ.
+        </p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px;">
+      <div class="card-tag">Правила в двух словах</div>
+      <div class="card-title">Небольшой гайд по «Уточкам судьбы»</div>
+      <ul class="text-muted">
+        <li>Можно вытаскивать одну карту дня или делать мини-расклад на 3 карты: «прошлое — настоящее — будущее» или «я — ситуация — совет».</li>
+        <li>Нет «плохих» карт — есть честные и иногда слегка ехидные уточки.</li>
+        <li>Если выпала карта, которая не зашла — задай себе вопрос: «где в этом есть правда про меня?».</li>
+        <li>Используй колоду в одиночестве, с подругами или в работе с клиентами — она подстраивается под формат.</li>
+        <li>Не воспринимай послания как приговор. Это подсказки и зеркала, а не строгий суд судьбы.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <h2>Несколько уточек из колоды</h2>
+    <p class="text-muted">Только малая часть стаи. Остальные 50+ ждут своей очереди высказаться.</p>
+    <div class="grid-3" style="margin-top:18px;">
+      <div class="card">
+        <div class="card-tag">Карта</div>
+        <div class="card-title">Уточка-офисная</div>
+        <p class="card-quote">«Главное — сделать вид, что у тебя есть план»</p>
+      </div>
+      <div class="card">
+        <div class="card-tag">Карта</div>
+        <div class="card-title">Уточка-луна</div>
+        <p class="card-quote">«Плачь красиво. Это уже искусство.»</p>
+      </div>
+      <div class="card">
+        <div class="card-tag">Карта</div>
+        <div class="card-title">Уточка-тень</div>
+        <p class="card-quote">«Не бойся своих теней. Они просто проверяют лампочку.»</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Проекты бренда «Уточки судьбы»</h2>
+    <p class="text-muted">
+      Колода — только начало. Вокруг уточек постепенно появляется своя экосистема: для работы, игры, творчества и самоиронии.
+    </p>
+
+    <div class="grid-3" style="margin-top:18px; align-items:stretch; gap: 18px;">
+
+      <!-- Блокнот -->
+      <div class="card">
+        <div class="card-tag">Блокнот</div>
+        <div class="card-title">Офисный блокнот на 50 страниц</div>
+        <img
+                src="notebook-office.png"
+                alt="Блокнот «Уточки судьбы» — офисный этикет"
+                class="card-image"
+        >
+        <p class="text-muted">
+          Формат A5, мягкий юмор и офисная магия. На обложке — та самая утка:
+          «Согласно офисному этикету — нож принято держать в правой руке, а коллег — в страхе».
+          Внутри — 50 страниц для идей, задач, злых планов и светлых инсайтов.
+        </p>
       </div>
 
-      <div class="card" style="margin-top:18px;">
-        <div class="card-tag">Правила в двух словах</div>
-        <div class="card-title">Небольшой гайд по «Уточкам судьбы»</div>
-        <ul class="text-muted">
-          <li>Можно вытаскивать одну карту дня или делать мини-расклад на 3 карты: «прошлое — настоящее — будущее» или «я — ситуация — совет».</li>
-          <li>Нет «плохих» карт — есть честные и иногда слегка ехидные уточки.</li>
-          <li>Если выпала карта, которая не зашла — задай себе вопрос: «где в этом есть правда про меня?».</li>
-          <li>Используй колоду в одиночестве, с подругами или в работе с клиентами — она подстраивается под формат.</li>
-          <li>Не воспринимай послания как приговор. Это подсказки и зеркала, а не строгий суд судьбы.</li>
-        </ul>
+      <!-- Настольная игра (в разработке) -->
+      <div class="card">
+        <div class="card-tag">Настольная игра (в разработке)</div>
+        <div class="card-title">«Утки в Пограничье»</div>
+        <img
+                src="utochki-yet-magic.png"
+                alt="Уточки ещё колдуют — настольная игра"
+                class="card-image"
+        >
+        <p class="text-muted">
+          Атмосферная настольная игра, где уточки попадают в Пограничье — мир между
+          привычной реальностью и магией. Решения игроков, выбор карт и чувства тоже
+          влияют на то, что выберется, а что останется отрабатывать карму дизайна.
+        </p>
       </div>
-    </section>
 
-    <!-- GALLERY -->
-    <section id="gallery">
-      <h2>Несколько уточек из колоды</h2>
-      <p class="text-muted">Только малая часть стаи. Остальные 50+ ждут своей очереди высказаться.</p>
-      <div class="grid-3" style="margin-top:18px;">
-        <div class="card">
-          <div class="card-tag">Карта</div>
-          <div class="card-title">Уточка-офисная</div>
-          <p class="card-quote">«Главное — сделать вид, что у тебя есть план»</p>
-        </div>
-        <div class="card">
-          <div class="card-tag">Карта</div>
-          <div class="card-title">Уточка-луна</div>
-          <p class="card-quote">«Плачь красиво. Это уже искусство.»</p>
-        </div>
-        <div class="card">
-          <div class="card-tag">Карта</div>
-          <div class="card-title">Уточка-тень</div>
-          <p class="card-quote">«Не бойся своих теней. Они просто проверяют лампочку.»</p>
-        </div>
+      <!-- Будущий проект -->
+      <div class="card">
+        <div class="card-tag">Будущий проект</div>
+        <div class="card-title">«Уточки Таро»</div>
+        <img
+                src="utochki-yet-magic.png"
+                alt="Уточки ещё колдуют — будущие Таро"
+                class="card-image"
+        >
+        <p class="text-muted">
+          Полная колода Таро в стиле уточек судьбы: арканы, утки-архетипы, фирменные фразы
+          и визуальный язык бренда. Сейчас колода в стадии концепции и иллюстраций —
+          но уточки уже репетируют свои роли.
+        </p>
       </div>
-    </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <h2>Проекты бренда «Уточки судьбы»</h2>
-      <p class="text-muted">
-        Колода — только начало. Вокруг уточек постепенно появляется своя экосистема: для работы, игры, творчества и самоиронии.
-      </p>
+  </section>
 
-        <div class="grid-3" style="margin-top:18px; align-items:stretch; gap: 18px;">
+  <!-- FOR WHOM -->
+  <section id="for">
+    <h2>Кому подойдут «Уточки судьбы»</h2>
+    <p class="text-muted">
+      Это колода для тех, кто любит честный юмор и тёплую самоиронию.
+    </p>
+    <div class="pill-row">
+      <div class="pill">для подруг и девичников</div>
+      <div class="pill">для тарологов и практиков</div>
+      <div class="pill">для психологов и коучей</div>
+      <div class="pill">для блогеров и сторис-мейкеров</div>
+      <div class="pill">для тех, кто «устал, но держится»</div>
+    </div>
+  </section>
 
-        <!-- Блокнот -->
-        <div class="card">
-          <div class="card-tag">Блокнот</div>
-          <div class="card-title">Офисный блокнот на 50 страниц</div>
-          <img
-            src="notebook-office.png"
-            alt="Блокнот «Уточки судьбы» — офисный этикет"
-            class="card-image"
-          >
-          <p class="text-muted">
-            Формат A5, мягкий юмор и офисная магия. На обложке — та самая утка:
-            «Согласно офисному этикету — нож принято держать в правой руке, а коллег — в страхе».
-            Внутри — 50 страниц для идей, задач, злых планов и светлых инсайтов.
-          </p>
-        </div>
-
-        <!-- Настольная игра (в разработке) -->
-        <div class="card">
-          <div class="card-tag">Настольная игра (в разработке)</div>
-          <div class="card-title">«Утки в Пограничье»</div>
-          <img
-            src="utochki-yet-magic.png"
-            alt="Уточки ещё колдуют — настольная игра"
-            class="card-image"
-          >
-          <p class="text-muted">
-            Атмосферная настольная игра, где уточки попадают в Пограничье — мир между
-            привычной реальностью и магией. Решения игроков, выбор карт и чувства тоже
-            влияют на то, что выберется, а что останется отрабатывать карму дизайна.
-          </p>
-        </div>
-
-        <!-- Будущий проект -->
-        <div class="card">
-          <div class="card-tag">Будущий проект</div>
-          <div class="card-title">«Уточки Таро»</div>
-          <img
-            src="utochki-yet-magic.png"
-            alt="Уточки ещё колдуют — будущие Таро"
-            class="card-image"
-          >
-          <p class="text-muted">
-            Полная колода Таро в стиле уточек судьбы: арканы, утки-архетипы, фирменные фразы
-            и визуальный язык бренда. Сейчас колода в стадии концепции и иллюстраций —
-            но уточки уже репетируют свои роли.
-          </p>
-        </div>
-   
-    </section>
-
-    <!-- FOR WHOM -->
-    <section id="for">
-      <h2>Кому подойдут «Уточки судьбы»</h2>
-      <p class="text-muted">
-        Это колода для тех, кто любит честный юмор и тёплую самоиронию.
-      </p>
-      <div class="pill-row">
-        <div class="pill">для подруг и девичников</div>
-        <div class="pill">для тарологов и практиков</div>
-        <div class="pill">для психологов и коучей</div>
-        <div class="pill">для блогеров и сторис-мейкеров</div>
-        <div class="pill">для тех, кто «устал, но держится»</div>
+  <!-- ORDER / WB -->
+  <section id="order">
+    <h2>Где купить колоду</h2>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-tag">Формат</div>
+        <div class="card-title">Физическая колода</div>
+        <p class="text-muted">
+          55 карт с утками + коробочка.
+          Плотная бумага, закруглённые углы, приятная печать.
+          <br><br>
+          <strong>Стоимость: 1499 ₽</strong>
+        </p>
       </div>
-    </section>
+      <div class="card">
+        <div class="card-tag">Wildberries</div>
+        <div class="card-title">Официальная продажа</div>
+        <p class="text-muted">
+          Колода доступна к покупке на Wildberries. Перейди по ссылке, чтобы посмотреть актуальное наличие,
+          отзывы и оформить заказ удобным тебе способом.
+        </p>
+        <button class="btn" onclick="window.location.href='ВАША_ССЫЛКА_НА_WB';">
+          Купить на Wildberries
+        </button>
+        <p class="text-muted" style="font-size:12px; margin-top:8px;">
+        </p>
+      </div>
+      <div class="card">
+        <div class="card-tag">Поддержка</div>
+        <div class="card-title">Вопросы по колоде</div>
+        <p class="text-muted">
+          Если есть вопросы по колоде, идеям раскладов или сотрудничеству — пиши в Telegram:
+          <br><br>
+          <a href="https://t.me/cringe_soju" target="_blank" rel="noopener">@cringe_soju</a>
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <!-- ORDER / WB -->
-    <section id="order">
-      <h2>Где купить колоду</h2>
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-tag">Формат</div>
-          <div class="card-title">Физическая колода</div>
-          <p class="text-muted">
-            55 карт с утками + коробочка.  
-            Плотная бумага, закруглённые углы, приятная печать.
-            <br><br>
-            <strong>Стоимость: 1499 ₽</strong>
-          </p>
-        </div>
-        <div class="card">
-          <div class="card-tag">Wildberries</div>
-          <div class="card-title">Официальная продажа</div>
-          <p class="text-muted">
-            Колода доступна к покупке на Wildberries. Перейди по ссылке, чтобы посмотреть актуальное наличие,
-            отзывы и оформить заказ удобным тебе способом.
-          </p>
-          <button class="btn" onclick="window.location.href='ВАША_ССЫЛКА_НА_WB';">
-            Купить на Wildberries
-          </button>
-          <p class="text-muted" style="font-size:12px; margin-top:8px;">
-          </p>
-        </div>
-        <div class="card">
-          <div class="card-tag">Поддержка</div>
-          <div class="card-title">Вопросы по колоде</div>
-          <p class="text-muted">
-            Если есть вопросы по колоде, идеям раскладов или сотрудничеству — пиши в Telegram:
-            <br><br>
-            <a href="https://t.me/cringe_soju" target="_blank" rel="noopener">@cringe_soju</a>
-          </p>
-        </div>
+  <!-- AUTHOR -->
+  <section id="author">
+    <h2>Об авторе</h2>
+    <div class="author-block">
+      <div class="author-avatar">
+        <!-- файл author-avatar.jpg рядом с index.html -->
+        <img src="author-avatar.jpg" alt="Автор колоды Уточки судьбы">
       </div>
-    </section>
+      <div class="author-text">
+        <p><strong>Привет! Меня зовут Анастасия Ситникова.</strong></p>
+        <p>
+          Я — автор идеи, иллюстраций и текстов колоды «Уточки судьбы».
+          Я совмещаю юридическое мышление, творчество, эзотерику, чувство юмора и любовь к карточным системам.
+        </p>
+        <p>
+          «Уточки судьбы» родились в момент, когда мне очень хотелось создать что-то лёгкое, тёплое, честное и смешное —
+          инструмент, который помогает взглянуть на жизнь под другим углом.
+        </p>
+        <p>
+          Сейчас я живу между двумя мирами — Россией и Кореей, учусь на языковых курсах корейского языка в Сеуле,
+          создаю проекты, пишу, рисую и вдохновляю других находить ответы внутри себя.
+        </p>
+        <p>
+          Если тебе интересен мой творческий лайф-блог —
+          подписывайся на Telegram-канал:
+          <a href="https://t.me/cringe_soju" target="_blank" rel="noopener">@cringe_soju</a>.
+        </p>
+        <p>Спасибо, что поддерживаешь моё творчество. Ты теперь часть стаи 🦆✨</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- AUTHOR -->
-    <section id="author">
-      <h2>Об авторе</h2>
-      <div class="author-block">
-        <div class="author-avatar">
-          <!-- файл author-avatar.jpg рядом с index.html -->
-          <img src="author-avatar.jpg" alt="Автор колоды Уточки судьбы">
-        </div>
-        <div class="author-text">
-          <p><strong>Привет! Меня зовут Анастасия Ситникова.</strong></p>
-          <p>
-            Я — автор идеи, иллюстраций и текстов колоды «Уточки судьбы». 
-            Я совмещаю юридическое мышление, творчество, эзотерику, чувство юмора и любовь к карточным системам.
-          </p>
-          <p>
-            «Уточки судьбы» родились в момент, когда мне очень хотелось создать что-то лёгкое, тёплое, честное и смешное — 
-            инструмент, который помогает взглянуть на жизнь под другим углом.
-          </p>
-          <p>
-            Сейчас я живу между двумя мирами — Россией и Кореей, учусь на языковых курсах корейского языка в Сеуле, 
-            создаю проекты, пишу, рисую и вдохновляю других находить ответы внутри себя.
-          </p>
-          <p>
-            Если тебе интересен мой творческий лайф-блог — 
-            подписывайся на Telegram-канал: 
-            <a href="https://t.me/cringe_soju" target="_blank" rel="noopener">@cringe_soju</a>.
-          </p>
-          <p>Спасибо, что поддерживаешь моё творчество. Ты теперь часть стаи 🦆✨</p>
-        </div>
+  <!-- FAQ -->
+  <section id="faq">
+    <h2>Частые вопросы</h2>
+    <div class="faq-item">
+      <div class="faq-q">Это таро?</div>
+      <div class="faq-a">
+        Это не классическое таро, а авторская колода-оракул. Здесь нет жёстких раскладов и сложной системы — только утки, фразы и твоя интуиция.
       </div>
-    </section>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Нужен ли опыт в картах?</div>
+      <div class="faq-a">
+        Нет. Ты можешь быть новичком. Главное — интерес и готовность честно смотреть на то, что откликается.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Можно использовать с клиентами?</div>
+      <div class="faq-a">
+        Да, уточки отлично подходят для мягких, ненавязчивых практик, первой встречи, игры на девичниках, психологических сессий и марафонов.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Это заменяет психолога или врача?</div>
+      <div class="faq-a">
+        Нет. Колода создана для вдохновения и саморазмышления. При серьёзных вопросах лучше обратиться к специалисту.
+      </div>
+    </div>
+  </section>
 
-    <!-- FAQ -->
-    <section id="faq">
-      <h2>Частые вопросы</h2>
-      <div class="faq-item">
-        <div class="faq-q">Это таро?</div>
-        <div class="faq-a">
-          Это не классическое таро, а авторская колода-оракул. Здесь нет жёстких раскладов и сложной системы — только утки, фразы и твоя интуиция.
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Нужен ли опыт в картах?</div>
-        <div class="faq-a">
-          Нет. Ты можешь быть новичком. Главное — интерес и готовность честно смотреть на то, что откликается.
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Можно использовать с клиентами?</div>
-        <div class="faq-a">
-          Да, уточки отлично подходят для мягких, ненавязчивых практик, первой встречи, игры на девичниках, психологических сессий и марафонов.
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Это заменяет психолога или врача?</div>
-        <div class="faq-a">
-          Нет. Колода создана для вдохновения и саморазмышления. При серьёзных вопросах лучше обратиться к специалисту.
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      🦆 «Уточки судьбы» — авторская вселенная: колоды, блокноты, игры и иллюстрации.
-      Иллюстрации и тексты защищены, не используйте их без согласия автора.
-      <br><br>
-      <strong style="color:#FFD86F;">Магия для тех, кто устал, но всё ещё держится.</strong>
-    </footer>
-  </div>
+  <footer>
+    🦆 «Уточки судьбы» — авторская вселенная: колоды, блокноты, игры и иллюстрации.
+    Иллюстрации и тексты защищены, не используйте их без согласия автора.
+    <br><br>
+    <strong style="color:#FFD86F;">Магия для тех, кто устал, но всё ещё держится.</strong>
+  </footer>
+</div>
 </body>
 </html>
-
 
 
 

@@ -1,0 +1,42 @@
+.text-block
+{
+  .container
+  {
+    .row
+    {
+
+    }
+  }
+  .card-wrap
+  {
+    margin-top: 20px;
+    .card
+    {
+      height: 100%;
+      @include display(flex);
+      @include flex(1 0 auto);
+      .card-tag
+      {
+
+      }
+      .card-title
+      {
+
+      }
+      .img-wrap
+      {
+        img
+        {
+
+        }
+      }
+      .text
+      {
+        ul
+        {
+          padding-left: 18px;
+        }
+      }
+    }
+  }
+}

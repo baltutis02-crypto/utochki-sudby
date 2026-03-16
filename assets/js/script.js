@@ -23,6 +23,46 @@ var paddingheight;
         }
     });
 
+    $('.card-carousel').owlCarousel({
+        loop:true,
+        dots:false,
+        margin: 30,
+        nav:false,
+        center:true,
+        autoplayTimeout:5000,
+        autoPlay: true,
+        autoplayHoverPause:true,
+
+        responsive:{
+            0:{
+                items:1
+            },
+            991:{
+                items:3
+            }
+        }
+    });
+
+    $('.ducks-carousel').owlCarousel({
+        loop:true,
+        dots:false,
+        margin: 30,
+        nav:false,
+        center:true,
+        autoplayTimeout:5000,
+        autoPlay: true,
+        autoplayHoverPause:true,
+
+        responsive:{
+            0:{
+                items:1
+            },
+            991:{
+                items:3
+            }
+        }
+    });
+
     // picture-carousel - Go to the next item
     $('.pc-btn-next-wrap').click(function() {
         $('.picture-carousel').trigger('next.owl.carousel');
@@ -36,6 +76,24 @@ var paddingheight;
     })
 
 })(jQuery);
+
+(function($){
+
+
+    // picture-carousel - Go to the next item
+    $('.pc-btn-next-wrap').click(function() {
+        $('.picture-carousel').trigger('next.owl.carousel');
+    })
+
+    // picture-carousel - Go to the previous item
+    $('.pc-btn-prev-wrap').click(function() {
+        // With optional speed parameter
+        // Parameters has to be in square bracket '[]'
+        $('.picture-carousel').trigger('prev.owl.carousel', [300]);
+    })
+
+})(jQuery);
+
 
 // Loader ctrl
 window.addEventListener('load', function () {

@@ -1,0 +1,54 @@
+.text-card-carousel-block
+{
+  .container
+  {
+    .row
+    {
+
+    }
+  }
+  h2
+  {
+    margin-bottom: 16px;
+  }
+  .text
+  {
+
+  }
+
+  .card-carousel
+  {
+    margin-top: 10px;
+    padding-left: 15px;
+    .owl-stage-outer
+    {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      .owl-stage
+      {
+        @include display(flex);
+        .owl-item
+        {
+        }
+      }
+    }
+    .card
+    {
+      height: 100%;
+      @include display(flex);
+      @include flex(1 0 auto);
+      .card-tag
+      {
+
+      }
+      .card-title
+      {
+
+      }
+      .text
+      {
+
+      }
+    }
+  }
+}

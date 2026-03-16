@@ -14,7 +14,7 @@ body
   background: #050616;
   position: relative;
   overflow-x: hidden;
-  color: #E8E6FF;
+  color: $utochki-white;
   line-height: 1.6;
   min-height: 100vh;
   &:before
@@ -90,7 +90,8 @@ body
 
 section
 {
-
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .container
@@ -154,18 +155,45 @@ table
   }
 }
 
+h1, h2, h3
+{
+  color: $utochki-yellow;
+  position: relative;
+  letter-spacing: 0.5px;
+  @include text-shadow(0 0 12px $utochki-yellow-40);
+}
+
 h1
 {
-
+  font-size: 4.2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  line-height: 1.6;
 }
 
 h2
 {
-
+  line-height: 1.6;
+  font-size: 2.4rem;
+  font-weight: 700;
+  &:after
+  {
+    content: " ✦";
+    color: $utochki-neon-pink;
+    font-size: 1.6rem;
+    margin-left: 6px;
+  }
 }
 
 h3
 {
+  margin-top: 4px;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  color: $utochki-yellow;
+  line-height: 1.6;
+  font-weight: 400;
+  @include opacity(95);
 
 }
 
@@ -182,4 +210,159 @@ h5
 h6
 {
 
+}
+
+.btn-wrap
+{
+
+}
+
+a.btn
+{
+  padding: 10px 22px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid $utochki-neon-pink-60;
+  color: $utochki-baby-pink;
+  text-decoration: none;
+  @include display(inline-block);
+  @include border-radius(999px);
+  @include box-shadow(none);
+  @include transition-duration(250ms);
+  @include transition-timing-function(ease-in-out);
+  @include transition-property(all);
+  &:hover
+  {
+    background: $utochki-neon-pink-5;
+    color: $utochki-baby-pink;
+    @include box-shadow(0 0 14px $utochki-neon-pink-50);
+    @include transform(translateY(-2px));
+  }
+  &.grad-bgd
+  {
+    background: linear-gradient(135deg, $utochki-neon-pink, $utochki-yellow);
+    color: $utochki-dark-95;
+    border: none;
+    box-shadow: 0 0 10px $utochki-neon-pink-50;
+    &:hover
+    {
+      color: $utochki-dark-95;
+      @include box-shadow(0 0 18px $utochki-neon-pink-70);
+    }
+  }
+}
+
+.text
+{
+  font-size: 1.6rem;
+  color: $utochki-white;
+  @include opacity(95);
+  &.muted
+  {
+    color: $utochki-moonlight;
+    @include opacity(90);
+  }
+}
+
+.img-wrap
+{
+  width: 100%;
+  height: auto;
+  img
+  {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.card
+{
+  border: 1px solid rgba($white, 0.12);
+  background: radial-gradient(circle at top left, $utochki-neon-pink-15, transparent 55%), radial-gradient(circle at bottom right, $utochki-turquise-10, transparent 60%), $utochki-dark-90;
+  padding: 16px 18px;
+  @include box-shadow(0 0 12px $utochki-neon-pink-25);
+  @include border-radius(18px);
+  @include backdrop-filter(blur(6px));
+  @include transition(0.3s ease);
+  .card-tag
+  {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: $utochki-neon-pink;
+    @include opacity(90);
+  }
+  .card-title
+  {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: $utochki-yellow;
+    @include text-shadow(0 0 6px $utochki-yellow-25);
+  }
+  .text
+  {
+    font-size: 1.5rem;
+    a
+    {
+      color: $utochki-yellow;
+      text-decoration: underline;
+      @include text-decoration-color($transparent);
+      @include transition-duration(250ms);
+      &:hover
+      {
+        color: $utochki-yellow;
+        text-decoration: underline;
+        @include text-decoration-color($utochki-yellow);
+      }
+    }
+  }
+  .img-wrap
+  {
+    width: 100%;
+    height: 380px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    @include border-radius(24px);
+    img
+    {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      @include object-fit-cover;
+    }
+  }
+  a.btn
+  {
+    margin-top: 16px;
+  }
+  &:hover
+  {
+    @include transform(translateY(-3px));
+    @include box-shadow(0 0 18px $utochki-neon-pink-40);
+  }
+}
+
+ul.tag-list
+{
+  padding-left: 0;
+  gap: 8px;
+  @include display(flex);
+  @include flex-wrap(wrap);
+  li
+  {
+    display: block;
+    padding: 4px 10px;
+    border: 1px solid rgba($white, 0.25);
+    font-size: 1.2rem;
+    color: $utochki-white;
+    background: $utochki-dark-70;
+    @include border-radius(999px);
+    @include box-shadow(0 0 10px $utochki-turquise-25);
+    @include opacity(90);
+  }
 }
