@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { services } from "@/lib/site";
-import { NatalVenusSample, NatalCareerSample, SajuEnergySample, SajuMoneySample } from "@/components/ReadingSamples";
 
 export const metadata = { title: "Разборы" };
 
@@ -86,8 +85,14 @@ export default function ReadingsPage() {
             </div>
             <p>В примере — любовь и ценности, а ещё карьерная реализация и сильные качества.</p>
             <div className="example-pages">
-              <NatalVenusSample />
-              <NatalCareerSample />
+              <a className="example-page" href="/examples/natal-venus-real.webp" target="_blank" rel="noreferrer">
+                <Image unoptimized src="/examples/natal-venus-real.webp" width={520} height={735} alt="Венера в Рыбах — реальная страница натального разбора" />
+                <span>Венера · любовь и ценности</span>
+              </a>
+              <a className="example-page" href="/examples/natal-career-real.webp" target="_blank" rel="noreferrer">
+                <Image unoptimized src="/examples/natal-career-real.webp" width={520} height={735} alt="Карьера и реализация — реальная страница натального разбора" />
+                <span>Карьера · реализация</span>
+              </a>
             </div>
             <Link className="button ghost example-cta" href="/razbory/natalnaya-karta">Посмотреть Наталку подробнее</Link>
           </article>
@@ -102,16 +107,21 @@ export default function ReadingsPage() {
             </div>
             <p>В примере — баланс пяти элементов, энергетический профиль, деньги и реализация.</p>
             <div className="example-pages">
-              <SajuEnergySample />
-              <SajuMoneySample />
+              <a className="example-page" href="/examples/saju-energy-real.webp" target="_blank" rel="noreferrer">
+                <Image unoptimized src="/examples/saju-energy-real.webp" width={360} height={509} alt="Энергетический профиль — реальная страница разбора Саджу" />
+                <span>Энергетический профиль</span>
+              </a>
+              <a className="example-page" href="/examples/saju-money-real.webp" target="_blank" rel="noreferrer">
+                <Image unoptimized src="/examples/saju-money-real.webp" width={360} height={509} alt="Деньги и реализация — реальная страница разбора Саджу" />
+                <span>Деньги · реализация</span>
+              </a>
             </div>
             <Link className="button ghost example-cta" href="/razbory/saju">Посмотреть Саджу подробнее</Link>
           </article>
         </div>
 
         <p className="example-note">
-          Это фрагменты реальных разборов, собранные прямо на сайте без персональных данных.
-          В готовом заказе ты получаешь цельную персональную книгу в PDF.
+          Это именно реальные страницы готовых разборов. Для сайта я только уменьшила вес файлов — дизайн и содержание не меняла.
         </p>
       </section>
     </main>
