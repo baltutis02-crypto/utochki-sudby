@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { NatalVenusSample, NatalCareerSample } from "@/components/ReadingSamples";
 
 export const metadata = { title: "Натальная карта" };
 
@@ -53,17 +53,11 @@ export default function NatalPage() {
         </div>
 
         <div className="reading-example-grid">
-          <a className="example-page large" href="/examples/natal-venus.webp" target="_blank" rel="noreferrer">
-            <Image src="/examples/natal-venus.webp" width={360} height={509} alt="Пример натального разбора: Венера в Рыбах, любовь, близость и ценности" />
-            <span>Венера в Рыбах · любовь, близость и ценности</span>
-          </a>
-          <a className="example-page large" href="/examples/natal-career.webp" target="_blank" rel="noreferrer">
-            <Image src="/examples/natal-career.webp" width={360} height={509} alt="Пример натального разбора: карьера и реализация" />
-            <span>Карьера и реализация</span>
-          </a>
+          <NatalVenusSample />
+          <NatalCareerSample />
         </div>
 
-        <p className="example-note">Нажми на страницу — она откроется отдельно крупнее.</p>
+        <p className="example-note">Это фрагменты реальных страниц, собранные на сайте без персональных данных.</p>
       </section>
 
       <section className="section no-x">
