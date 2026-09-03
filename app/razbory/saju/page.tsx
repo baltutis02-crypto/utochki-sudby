@@ -22,7 +22,7 @@ export default function SajuPage() {
             Разбор карты рождения через баланс пяти элементов и десять небесных стволов.
             Без попытки сделать из человека «огненную лошадь в четверг».
           </p>
-          <div className="price-row"><strong>от 4 990 ₽</strong><span>PDF + личный кабинет</span></div>
+          <div className="price-row"><strong>1 500 ₽</strong><span>PDF + личный кабинет</span></div>
           <Link className="button primary" href="/login">Заказать разбор</Link>
         </div>
         <div className="service-box">
