@@ -14,14 +14,10 @@ export default function NatalPage() {
   return (
     <main className="inner-page shell">
       <Link className="back-link" href="/razbory">← Все разборы</Link>
-
       <div className="service-hero">
         <div>
           <p className="eyebrow">Западная астрология</p>
-          <div className="service-title-with-duck">
-            <h1>Натальная карта</h1>
-            <span className="duck-sprite duck-natal service-hero-duck" aria-hidden="true" />
-          </div>
+          <h1>Натальная карта</h1>
           <p className="lead narrow">
             Подробный персональный разбор без копипаста из справочника аспектов.
             Собираем карту в одну историю и смотрим, как её темы проявляются именно у тебя.
@@ -29,36 +25,11 @@ export default function NatalPage() {
           <div className="price-row"><strong>1 700 ₽</strong><span>PDF + личный кабинет</span></div>
           <Link className="button primary" href="/login">Заказать разбор</Link>
         </div>
-
         <div className="service-box">
           <p className="eyebrow">Что внутри</p>
           <ul>{includes.map((item) => <li key={item}>{item}</li>)}</ul>
         </div>
       </div>
-
-      <section className="inline-example-section">
-        <div className="reading-example-head">
-          <p className="eyebrow">Пример готовой работы</p>
-          <h2>Вот реальные страницы из Наталки</h2>
-          <p>
-            Не макет и не пересобранная версия для сайта — настоящие страницы готовой книги:
-            Венера в Рыбах и карьера/реализация.
-          </p>
-        </div>
-
-        <a
-          className="real-example-link"
-          href="/examples/natal-examples.webp"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            src="/examples/natal-examples.webp"
-            alt="Реальные страницы натальной книги: Венера в Рыбах и карьера"
-          />
-          <span>Открыть страницы крупно →</span>
-        </a>
-      </section>
 
       <section className="question-note">
         <p className="eyebrow">Можно добавить свой вопрос</p>

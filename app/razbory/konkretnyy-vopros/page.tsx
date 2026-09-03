@@ -17,10 +17,7 @@ export default function SpecificQuestionPage() {
       <div className="service-hero">
         <div>
           <p className="eyebrow">Точечно и по делу</p>
-          <div className="service-title-with-duck">
-            <h1>Разобрать конкретный вопрос</h1>
-            <span className="duck-sprite duck-question service-hero-duck" aria-hidden="true" />
-          </div>
+          <h1>Разобрать конкретный вопрос</h1>
           <p className="lead narrow">
             Когда весь портрет сейчас не нужен, а хочется получить ответ по одной конкретной теме.
             Не расползаемся по всем сферам жизни — берём один вопрос и разбираем именно его.

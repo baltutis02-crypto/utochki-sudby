@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import "./duck-mascots.css";
 
 export const metadata: Metadata = {
   title: {

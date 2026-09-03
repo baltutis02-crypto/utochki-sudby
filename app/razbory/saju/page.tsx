@@ -14,14 +14,10 @@ export default function SajuPage() {
   return (
     <main className="inner-page shell">
       <Link className="back-link" href="/razbory">← Все разборы</Link>
-
       <div className="service-hero">
         <div>
           <p className="eyebrow">Корейская система четырёх столпов</p>
-          <div className="service-title-with-duck">
-            <h1>Саджу</h1>
-            <span className="duck-sprite duck-saju service-hero-duck" aria-hidden="true" />
-          </div>
+          <h1>Саджу</h1>
           <p className="lead narrow">
             Разбор карты рождения через баланс пяти элементов и десять небесных стволов.
             Без попытки сделать из человека «огненную лошадь в четверг».
@@ -29,36 +25,11 @@ export default function SajuPage() {
           <div className="price-row"><strong>1 500 ₽</strong><span>PDF + личный кабинет</span></div>
           <Link className="button primary" href="/login">Заказать разбор</Link>
         </div>
-
         <div className="service-box">
           <p className="eyebrow">Что внутри</p>
           <ul>{includes.map((item) => <li key={item}>{item}</li>)}</ul>
         </div>
       </div>
-
-      <section className="inline-example-section">
-        <div className="reading-example-head">
-          <p className="eyebrow">Пример готовой работы</p>
-          <h2>Вот реальные страницы из Саджу</h2>
-          <p>
-            Настоящие страницы готовой книги: энергетический профиль с балансом пяти элементов
-            и раздел про деньги и реализацию.
-          </p>
-        </div>
-
-        <a
-          className="real-example-link"
-          href="/examples/saju-examples.webp"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            src="/examples/saju-examples.webp"
-            alt="Реальные страницы книги Саджу: энергетический профиль и деньги"
-          />
-          <span>Открыть страницы крупно →</span>
-        </a>
-      </section>
 
       <section className="question-note">
         <p className="eyebrow">Можно добавить свой вопрос</p>
