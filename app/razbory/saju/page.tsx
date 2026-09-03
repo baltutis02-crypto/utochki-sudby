@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { SajuEnergySample, SajuMoneySample } from "@/components/ReadingSamples";
 
 export const metadata = { title: "Саджу" };
 
@@ -53,17 +53,11 @@ export default function SajuPage() {
         </div>
 
         <div className="reading-example-grid">
-          <a className="example-page large" href="/examples/saju-energy.webp" target="_blank" rel="noreferrer">
-            <Image src="/examples/saju-energy.webp" width={360} height={509} alt="Пример разбора Саджу: энергетический профиль и баланс пяти элементов" />
-            <span>Энергетический профиль · баланс пяти элементов</span>
-          </a>
-          <a className="example-page large" href="/examples/saju-money.webp" target="_blank" rel="noreferrer">
-            <Image src="/examples/saju-money.webp" width={360} height={509} alt="Пример разбора Саджу: деньги и реализация" />
-            <span>Деньги и реализация</span>
-          </a>
+          <SajuEnergySample />
+          <SajuMoneySample />
         </div>
 
-        <p className="example-note">Нажми на страницу — она откроется отдельно крупнее.</p>
+        <p className="example-note">Это фрагменты реальных страниц, собранные на сайте без персональных данных.</p>
       </section>
 
       <section className="section no-x">
