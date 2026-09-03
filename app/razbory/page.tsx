@@ -1,27 +1,27 @@
-import Image from "next/image";
 import Link from "next/link";
 import { services } from "@/lib/site";
 
 export const metadata = { title: "Разборы" };
 
-const serviceDucks: Record<string, { src: string; alt: string }> = {
-  "natalnaya-karta": {
-    src: "/ducks/natal-duck.webp",
-    alt: "Утёнок с телескопом и символом Водолея для Натальной карты",
-  },
-  saju: {
-    src: "/ducks/saju-duck.webp",
-    alt: "Утёнок со стихиями для Саджу",
-  },
-  combo: {
-    src: "/ducks/combo-ducks.webp",
-    alt: "Два утёнка вместе для Наталки и Саджу",
-  },
-  "konkretnyy-vopros": {
-    src: "/ducks/question-duck.webp",
-    alt: "Утёнок с лупой для конкретного вопроса",
-  },
-};
+function ServiceDuck({ slug }: { slug: string }) {
+  if (slug === "combo") {
+    return (
+      <div className="combo-ducks" aria-hidden="true">
+        <span className="duck-sprite duck-natal" />
+        <span className="duck-sprite duck-saju" />
+      </div>
+    );
+  }
+
+  const duckClass =
+    slug === "natalnaya-karta"
+      ? "duck-natal"
+      : slug === "saju"
+        ? "duck-saju"
+        : "duck-question";
+
+  return <span className={`duck-sprite ${duckClass}`} aria-hidden="true" />;
+}
 
 export default function ReadingsPage() {
   return (
@@ -30,100 +30,81 @@ export default function ReadingsPage() {
       <p className="eyebrow">Разборы</p>
       <h1>Выбирай систему, а не уровень тревоги</h1>
       <p className="lead narrow">
-        Здесь — точный состав, примеры страниц и финальная цена каждого формата.
-        Можно сначала посмотреть, как всё выглядит, и уже потом решать, какая система тебе ближе.
+        Здесь — точный состав, реальные страницы готовых разборов и финальная цена каждого формата.
+        Всё нужное видно сразу, без поисков по странице.
       </p>
 
-      <div className="cards three reading-grid">
-        {services.map((service) => (
-          <article className={`service-card ${service.slug === "konkretnyy-vopros" ? "question-card" : ""}`} key={service.slug}>
-            <div className="service-card-head">
-              <div>
-                <p className="eyebrow">{service.eyebrow}</p>
-                <h2>{service.title}</h2>
+      <div className="cards reading-grid">
+        {services.map((service) => {
+          const sample =
+            service.slug === "natalnaya-karta"
+              ? {
+                  src: "/examples/natal-examples.webp",
+                  alt: "Реальные страницы натального разбора: Венера в Рыбах и карьера",
+                  label: "Реальные страницы Наталки →",
+                }
+              : service.slug === "saju"
+                ? {
+                    src: "/examples/saju-examples.webp",
+                    alt: "Реальные страницы разбора Саджу: энергетический профиль и деньги",
+                    label: "Реальные страницы Саджу →",
+                  }
+                : null;
+
+          return (
+            <article
+              className={`service-card reading-service-card ${service.slug === "konkretnyy-vopros" ? "question-card" : ""}`}
+              key={service.slug}
+            >
+              <div className="service-card-head">
+                <div>
+                  <p className="eyebrow">{service.eyebrow}</p>
+                  <h2>{service.title}</h2>
+                </div>
+                <div className="service-duck-slot">
+                  <ServiceDuck slug={service.slug} />
+                </div>
               </div>
-              <div className={`service-duck service-duck-${service.slug}`}>
-                <Image
-                  src={serviceDucks[service.slug].src}
-                  width={200}
-                  height={200}
-                  alt={serviceDucks[service.slug].alt}
-                />
-              </div>
-            </div>
-            <p>{service.description}</p>
-            <div className="card-bottom">
-              <strong>{service.price}</strong>
-              {service.slug !== "combo" ? (
-                <Link href={`/razbory/${service.slug}`}>Открыть →</Link>
+
+              <p>{service.description}</p>
+
+              {sample ? (
+                <a
+                  className="service-sample-preview"
+                  href={sample.src}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={sample.label}
+                >
+                  <img src={sample.src} alt={sample.alt} />
+                  <span>{sample.label}</span>
+                </a>
+              ) : service.slug === "combo" ? (
+                <div className="service-mini-note">
+                  Внутри — обе полноценные книги: Натальная карта и Саджу.
+                </div>
               ) : (
-                <span>скоро</span>
+                <div className="service-mini-note">
+                  Один вопрос, один фокус и отдельный готовый PDF.
+                </div>
               )}
-            </div>
-          </article>
-        ))}
+
+              <div className="card-bottom">
+                <strong>{service.price}</strong>
+                {service.slug !== "combo" ? (
+                  <Link href={`/razbory/${service.slug}`}>Открыть →</Link>
+                ) : (
+                  <span>скоро</span>
+                )}
+              </div>
+            </article>
+          );
+        })}
       </div>
 
-      <section className="examples-section">
-        <div className="examples-intro">
-          <p className="eyebrow">Так выглядит результат</p>
-          <h2>Не кот в мешке. Вот реальные страницы.</h2>
-          <p>
-            Показываю фрагменты готовых персональных книг. Паспортные страницы с именем,
-            датой, временем и местом рождения в публичные примеры не попадают.
-          </p>
-        </div>
-
-        <div className="example-showcase-grid">
-          <article className="example-showcase-card">
-            <div className="example-card-head">
-              <div>
-                <p className="eyebrow">Западная астрология</p>
-                <h3>Натальная карта</h3>
-              </div>
-              <span>1 700 ₽</span>
-            </div>
-            <p>В примере — любовь и ценности, а ещё карьерная реализация и сильные качества.</p>
-            <div className="example-pages">
-              <a className="example-page" href="/examples/natal-venus-real.webp" target="_blank" rel="noreferrer">
-                <Image unoptimized src="/examples/natal-venus-real.webp" width={520} height={735} alt="Венера в Рыбах — реальная страница натального разбора" />
-                <span>Венера · любовь и ценности</span>
-              </a>
-              <a className="example-page" href="/examples/natal-career-real.webp" target="_blank" rel="noreferrer">
-                <Image unoptimized src="/examples/natal-career-real.webp" width={520} height={735} alt="Карьера и реализация — реальная страница натального разбора" />
-                <span>Карьера · реализация</span>
-              </a>
-            </div>
-            <Link className="button ghost example-cta" href="/razbory/natalnaya-karta">Посмотреть Наталку подробнее</Link>
-          </article>
-
-          <article className="example-showcase-card">
-            <div className="example-card-head">
-              <div>
-                <p className="eyebrow">Корейская система</p>
-                <h3>Саджу</h3>
-              </div>
-              <span>1 500 ₽</span>
-            </div>
-            <p>В примере — баланс пяти элементов, энергетический профиль, деньги и реализация.</p>
-            <div className="example-pages">
-              <a className="example-page" href="/examples/saju-energy-real.webp" target="_blank" rel="noreferrer">
-                <Image unoptimized src="/examples/saju-energy-real.webp" width={360} height={509} alt="Энергетический профиль — реальная страница разбора Саджу" />
-                <span>Энергетический профиль</span>
-              </a>
-              <a className="example-page" href="/examples/saju-money-real.webp" target="_blank" rel="noreferrer">
-                <Image unoptimized src="/examples/saju-money-real.webp" width={360} height={509} alt="Деньги и реализация — реальная страница разбора Саджу" />
-                <span>Деньги · реализация</span>
-              </a>
-            </div>
-            <Link className="button ghost example-cta" href="/razbory/saju">Посмотреть Саджу подробнее</Link>
-          </article>
-        </div>
-
-        <p className="example-note">
-          Это именно реальные страницы готовых разборов. Для сайта я только уменьшила вес файлов — дизайн и содержание не меняла.
-        </p>
-      </section>
+      <p className="reading-grid-note">
+        В примерах используются настоящие страницы готовых разборов; страницы с персональными данными не показываю.
+      </p>
     </main>
   );
 }

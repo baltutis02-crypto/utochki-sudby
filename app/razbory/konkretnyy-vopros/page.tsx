@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = { title: "Разобрать конкретный вопрос" };
@@ -20,13 +19,7 @@ export default function SpecificQuestionPage() {
           <p className="eyebrow">Точечно и по делу</p>
           <div className="service-title-with-duck">
             <h1>Разобрать конкретный вопрос</h1>
-            <Image
-              className="service-hero-duck"
-              src="/ducks/question-duck.webp"
-              width={200}
-              height={200}
-              alt="Утёнок с лупой"
-            />
+            <span className="duck-sprite duck-question service-hero-duck" aria-hidden="true" />
           </div>
           <p className="lead narrow">
             Когда весь портрет сейчас не нужен, а хочется получить ответ по одной конкретной теме.

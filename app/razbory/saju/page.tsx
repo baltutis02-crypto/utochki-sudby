@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = { title: "Саджу" };
@@ -15,18 +14,13 @@ export default function SajuPage() {
   return (
     <main className="inner-page shell">
       <Link className="back-link" href="/razbory">← Все разборы</Link>
+
       <div className="service-hero">
         <div>
           <p className="eyebrow">Корейская система четырёх столпов</p>
           <div className="service-title-with-duck">
             <h1>Саджу</h1>
-            <Image
-              className="service-hero-duck"
-              src="/ducks/saju-duck.webp"
-              width={200}
-              height={200}
-              alt="Утёнок со стихиями Саджу"
-            />
+            <span className="duck-sprite duck-saju service-hero-duck" aria-hidden="true" />
           </div>
           <p className="lead narrow">
             Разбор карты рождения через баланс пяти элементов и десять небесных стволов.
@@ -35,11 +29,36 @@ export default function SajuPage() {
           <div className="price-row"><strong>1 500 ₽</strong><span>PDF + личный кабинет</span></div>
           <Link className="button primary" href="/login">Заказать разбор</Link>
         </div>
+
         <div className="service-box">
           <p className="eyebrow">Что внутри</p>
           <ul>{includes.map((item) => <li key={item}>{item}</li>)}</ul>
         </div>
       </div>
+
+      <section className="inline-example-section">
+        <div className="reading-example-head">
+          <p className="eyebrow">Пример готовой работы</p>
+          <h2>Вот реальные страницы из Саджу</h2>
+          <p>
+            Настоящие страницы готовой книги: энергетический профиль с балансом пяти элементов
+            и раздел про деньги и реализацию.
+          </p>
+        </div>
+
+        <a
+          className="real-example-link"
+          href="/examples/saju-examples.webp"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            src="/examples/saju-examples.webp"
+            alt="Реальные страницы книги Саджу: энергетический профиль и деньги"
+          />
+          <span>Открыть страницы крупно →</span>
+        </a>
+      </section>
 
       <section className="question-note">
         <p className="eyebrow">Можно добавить свой вопрос</p>
@@ -49,30 +68,6 @@ export default function SajuPage() {
           Напиши вопрос при заказе — я разберу его отдельно в рамках основного Саджу.
           Если вопроса нет, делаю обычный полный разбор по программе.
         </p>
-      </section>
-
-      <section className="reading-example-section">
-        <div className="reading-example-head">
-          <p className="eyebrow">Пример готовой работы</p>
-          <h2>Как выглядит книга Саджу</h2>
-          <p>
-            Это реальные внутренние страницы персонального разбора.
-            Обложка и паспорт карты с датой, временем и местом рождения в публичный пример не попадают.
-          </p>
-        </div>
-
-        <div className="reading-example-grid">
-          <a className="example-page large" href="/examples/saju-energy-real.webp" target="_blank" rel="noreferrer">
-            <Image unoptimized src="/examples/saju-energy-real.webp" width={360} height={509} alt="Энергетический профиль — баланс пяти элементов" />
-            <span>Энергетический профиль · баланс пяти элементов</span>
-          </a>
-          <a className="example-page large" href="/examples/saju-money-real.webp" target="_blank" rel="noreferrer">
-            <Image unoptimized src="/examples/saju-money-real.webp" width={360} height={509} alt="Деньги и реализация" />
-            <span>Деньги и реализация</span>
-          </a>
-        </div>
-
-        <p className="example-note">Именно эти страницы входят в реальный готовый разбор; на сайте они только сжаты по весу.</p>
       </section>
 
       <section className="section no-x">
