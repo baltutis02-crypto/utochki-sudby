@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { NatalVenusSample, NatalCareerSample } from "@/components/ReadingSamples";
 
 export const metadata = { title: "Натальная карта" };
 
@@ -57,17 +56,23 @@ export default function NatalPage() {
           <p className="eyebrow">Пример готовой работы</p>
           <h2>Как выглядит натальная книга</h2>
           <p>
-            Это реальные внутренние страницы персонального 10-страничного разбора.
+            Это реальные внутренние страницы персонального разбора.
             Первая страница и паспорт карты с персональными данными здесь специально не публикуются.
           </p>
         </div>
 
         <div className="reading-example-grid">
-          <NatalVenusSample />
-          <NatalCareerSample />
+          <a className="example-page large" href="/examples/natal-venus-real.webp" target="_blank" rel="noreferrer">
+            <Image unoptimized src="/examples/natal-venus-real.webp" width={520} height={735} alt="Венера в Рыбах — любовь, близость и ценности" />
+            <span>Венера в Рыбах · любовь, близость и ценности</span>
+          </a>
+          <a className="example-page large" href="/examples/natal-career-real.webp" target="_blank" rel="noreferrer">
+            <Image unoptimized src="/examples/natal-career-real.webp" width={520} height={735} alt="Карьера и реализация" />
+            <span>Карьера и реализация</span>
+          </a>
         </div>
 
-        <p className="example-note">Это фрагменты реальных страниц, собранные на сайте без персональных данных.</p>
+        <p className="example-note">Именно эти страницы входят в реальный готовый разбор; на сайте они только сжаты по весу.</p>
       </section>
 
       <section className="section no-x">
