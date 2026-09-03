@@ -148,9 +148,9 @@ export default function HomePage() {
         <span>🦆 Уточки судьбы</span>
         <span>© 2026</span>
         <div>
-          <a href="#">Оферта</a>
-          <a href="#">Политика ПД</a>
-          <a href="#">Контакты</a>
+          <Link href="/offer">Оферта</Link>
+          <Link href="/privacy">Политика ПД</Link>
+          <a href="mailto:baltutis02@gmail.com">Контакты</a>
         </div>
       </footer>
     </main>
