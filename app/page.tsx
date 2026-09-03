@@ -57,7 +57,7 @@ export default function HomePage() {
         </div>
         <div className="cards three">
           {services.map((service) => (
-            <article className="service-card" key={service.slug}>
+            <article className={`service-card ${service.slug === "konkretnyy-vopros" ? "question-card" : ""}`} key={service.slug}>
               <p className="eyebrow">{service.eyebrow}</p>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
