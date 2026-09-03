@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { processSteps, services } from "@/lib/site";
+import { heroImage } from "@/lib/heroImage";
 
 export default function HomePage() {
   return (
@@ -36,12 +37,13 @@ export default function HomePage() {
             <span>PDF-разбор</span><span>личный кабинет</span><span>оплата онлайн</span>
           </div>
         </div>
-        <div className="hero-orbit" aria-hidden="true">
-          <div className="moon">☾</div>
-          <div className="duck">🦆</div>
-          <span className="star s1">✦</span>
-          <span className="star s2">✧</span>
-          <span className="star s3">✦</span>
+        <div className="hero-art-card">
+          <img
+            className="hero-art-image"
+            src={heroImage}
+            alt="Коалиция Уточек судьбы: утка с бантиком и ножом, ведьма, таролог и волшебница"
+          />
+          <span className="hero-art-badge">коалиция судьбы · в сборе</span>
         </div>
       </section>
 
