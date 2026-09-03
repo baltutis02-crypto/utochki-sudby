@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SajuEnergySample, SajuMoneySample } from "@/components/ReadingSamples";
 
 export const metadata = { title: "Саджу" };
 
@@ -57,17 +56,23 @@ export default function SajuPage() {
           <p className="eyebrow">Пример готовой работы</p>
           <h2>Как выглядит книга Саджу</h2>
           <p>
-            Это реальные внутренние страницы персонального 10-страничного разбора.
+            Это реальные внутренние страницы персонального разбора.
             Обложка и паспорт карты с датой, временем и местом рождения в публичный пример не попадают.
           </p>
         </div>
 
         <div className="reading-example-grid">
-          <SajuEnergySample />
-          <SajuMoneySample />
+          <a className="example-page large" href="/examples/saju-energy-real.webp" target="_blank" rel="noreferrer">
+            <Image unoptimized src="/examples/saju-energy-real.webp" width={360} height={509} alt="Энергетический профиль — баланс пяти элементов" />
+            <span>Энергетический профиль · баланс пяти элементов</span>
+          </a>
+          <a className="example-page large" href="/examples/saju-money-real.webp" target="_blank" rel="noreferrer">
+            <Image unoptimized src="/examples/saju-money-real.webp" width={360} height={509} alt="Деньги и реализация" />
+            <span>Деньги и реализация</span>
+          </a>
         </div>
 
-        <p className="example-note">Это фрагменты реальных страниц, собранные на сайте без персональных данных.</p>
+        <p className="example-note">Именно эти страницы входят в реальный готовый разбор; на сайте они только сжаты по весу.</p>
       </section>
 
       <section className="section no-x">
