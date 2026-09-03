@@ -8,39 +8,41 @@ jobs:
   diagnose:
     runs-on: ubuntu-latest
     steps:
-      - name: DNS and HTTP diagnostics
+      - name: Route and asset diagnostics
         run: |
           set +e
-          echo "=== DATE ==="
-          date -u
+          BASE="https://utochki-sudby.ru"
+          UA='Mozilla/5.0 (iPhone; CPU iPhone OS 26_6 like Mac OS X) AppleWebKit/605.1.15 Version/26.6 Mobile/15E148 Safari/604.1'
+
+          echo "=== ROUTES ==="
+          for p in / /razbory /razbory/natalnaya-karta /razbory/saju /razbory/konkretnyy-vopros /offer /privacy /cabinet; do
+            code=$(curl -ksS -o /dev/null -w "%{http_code}" --max-time 20 "$BASE$p")
+            echo "$p -> $code"
+          done
+
           echo
-          echo "=== DNS A ==="
-          dig +short A utochki-sudby.ru
+          echo "=== IOS SAFARI ROOT ==="
+          curl -ksS -A "$UA" -D - -o /tmp/root.html --max-time 20 "$BASE/" | sed -n '1,30p'
+          echo "body-bytes: $(wc -c < /tmp/root.html)"
+          grep -o 'data-dpl-id="[^"]*"' /tmp/root.html | head -1
+          grep -o '/_next/static/immutable/chunks/[^" ]*' /tmp/root.html | sort -u > /tmp/assets.txt
+
           echo
-          echo "=== DNS AAAA ==="
-          dig +short AAAA utochki-sudby.ru
+          echo "=== NEXT ASSETS ==="
+          while read -r asset; do
+            code=$(curl -ksS -o /dev/null -w "%{http_code}" --max-time 20 "$BASE$asset")
+            bytes=$(curl -ksS -o /dev/null -w "%{size_download}" --max-time 20 "$BASE$asset")
+            echo "$code $bytes $asset"
+          done < /tmp/assets.txt
+
           echo
-          echo "=== DNS CNAME ==="
-          dig +short CNAME utochki-sudby.ru
+          echo "=== CACHE BYPASS ==="
+          curl -ksS -D - -o /dev/null --max-time 20 "$BASE/?diag=$(date +%s)" | grep -Ei 'HTTP/|server:|x-vercel-cache:|age:|etag:|x-vercel-id:'
+
           echo
-          echo "=== DNS NS ==="
-          dig +short NS utochki-sudby.ru
-          echo
-          echo "=== WWW DNS ==="
-          dig +short A www.utochki-sudby.ru
-          dig +short CNAME www.utochki-sudby.ru
-          echo
-          echo "=== HTTPS custom domain ==="
-          curl -vkIL --max-time 25 https://utochki-sudby.ru/ 2>&1
-          echo
-          echo "=== HTTP custom domain ==="
-          curl -vIL --max-time 25 http://utochki-sudby.ru/ 2>&1
-          echo
-          echo "=== HTTPS www ==="
-          curl -vkIL --max-time 25 https://www.utochki-sudby.ru/ 2>&1
-          echo
-          echo "=== Default GitHub Pages URL ==="
-          curl -vkIL --max-time 25 https://baltutis02-crypto.github.io/utochki-sudby/ 2>&1
-          echo
-          echo "=== BODY custom domain first 40 lines ==="
-          curl -ksSL --max-time 25 https://utochki-sudby.ru/ | head -40
+          echo "=== DNS MULTI RESOLVER ==="
+          for dns in 1.1.1.1 8.8.8.8 9.9.9.9; do
+            echo "@$dns"
+            dig +short @$dns A utochki-sudby.ru
+            dig +short @$dns CNAME www.utochki-sudby.ru
+          done
