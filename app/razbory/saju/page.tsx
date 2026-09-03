@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { SajuEnergySample, SajuMoneySample } from "@/components/ReadingSamples";
 
@@ -18,7 +19,16 @@ export default function SajuPage() {
       <div className="service-hero">
         <div>
           <p className="eyebrow">Корейская система четырёх столпов</p>
-          <h1>Саджу</h1>
+          <div className="service-title-with-duck">
+            <h1>Саджу</h1>
+            <Image
+              className="service-hero-duck"
+              src="/ducks/saju-duck.webp"
+              width={200}
+              height={200}
+              alt="Утёнок со стихиями Саджу"
+            />
+          </div>
           <p className="lead narrow">
             Разбор карты рождения через баланс пяти элементов и десять небесных стволов.
             Без попытки сделать из человека «огненную лошадь в четверг».

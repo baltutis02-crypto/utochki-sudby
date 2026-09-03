@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = { title: "Разобрать конкретный вопрос" };
@@ -17,7 +18,16 @@ export default function SpecificQuestionPage() {
       <div className="service-hero">
         <div>
           <p className="eyebrow">Точечно и по делу</p>
-          <h1>Разобрать конкретный вопрос</h1>
+          <div className="service-title-with-duck">
+            <h1>Разобрать конкретный вопрос</h1>
+            <Image
+              className="service-hero-duck"
+              src="/ducks/question-duck.webp"
+              width={200}
+              height={200}
+              alt="Утёнок с лупой"
+            />
+          </div>
           <p className="lead narrow">
             Когда весь портрет сейчас не нужен, а хочется получить ответ по одной конкретной теме.
             Не расползаемся по всем сферам жизни — берём один вопрос и разбираем именно его.

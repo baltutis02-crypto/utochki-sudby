@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { NatalVenusSample, NatalCareerSample } from "@/components/ReadingSamples";
 
@@ -18,7 +19,16 @@ export default function NatalPage() {
       <div className="service-hero">
         <div>
           <p className="eyebrow">Западная астрология</p>
-          <h1>Натальная карта</h1>
+          <div className="service-title-with-duck">
+            <h1>Натальная карта</h1>
+            <Image
+              className="service-hero-duck"
+              src="/ducks/natal-duck.webp"
+              width={200}
+              height={200}
+              alt="Утёнок с телескопом и символом Водолея"
+            />
+          </div>
           <p className="lead narrow">
             Подробный персональный разбор без копипаста из справочника аспектов.
             Собираем карту в одну историю и смотрим, как её темы проявляются именно у тебя.

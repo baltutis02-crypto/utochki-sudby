@@ -1,8 +1,28 @@
+import Image from "next/image";
 import Link from "next/link";
 import { services } from "@/lib/site";
 import { NatalVenusSample, NatalCareerSample, SajuEnergySample, SajuMoneySample } from "@/components/ReadingSamples";
 
 export const metadata = { title: "Разборы" };
+
+const serviceDucks: Record<string, { src: string; alt: string }> = {
+  "natalnaya-karta": {
+    src: "/ducks/natal-duck.webp",
+    alt: "Утёнок с телескопом и символом Водолея для Натальной карты",
+  },
+  saju: {
+    src: "/ducks/saju-duck.webp",
+    alt: "Утёнок со стихиями для Саджу",
+  },
+  combo: {
+    src: "/ducks/combo-ducks.webp",
+    alt: "Два утёнка вместе для Наталки и Саджу",
+  },
+  "konkretnyy-vopros": {
+    src: "/ducks/question-duck.webp",
+    alt: "Утёнок с лупой для конкретного вопроса",
+  },
+};
 
 export default function ReadingsPage() {
   return (
@@ -18,8 +38,20 @@ export default function ReadingsPage() {
       <div className="cards three reading-grid">
         {services.map((service) => (
           <article className={`service-card ${service.slug === "konkretnyy-vopros" ? "question-card" : ""}`} key={service.slug}>
-            <p className="eyebrow">{service.eyebrow}</p>
-            <h2>{service.title}</h2>
+            <div className="service-card-head">
+              <div>
+                <p className="eyebrow">{service.eyebrow}</p>
+                <h2>{service.title}</h2>
+              </div>
+              <div className={`service-duck service-duck-${service.slug}`}>
+                <Image
+                  src={serviceDucks[service.slug].src}
+                  width={200}
+                  height={200}
+                  alt={serviceDucks[service.slug].alt}
+                />
+              </div>
+            </div>
             <p>{service.description}</p>
             <div className="card-bottom">
               <strong>{service.price}</strong>

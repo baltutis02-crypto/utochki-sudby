@@ -1,0 +1,105 @@
+/* Product mascots from the visual language of the reading books */
+.service-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.service-card-head > div:first-child {
+  min-width: 0;
+}
+
+.service-card-head h2 {
+  margin-bottom: 0;
+}
+
+.service-duck {
+  flex: 0 0 112px;
+  width: 112px;
+  height: 112px;
+  margin: -10px -8px 0 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 216, 111, .25);
+  border-radius: 30px;
+  background: #f8eee8;
+  box-shadow: 0 15px 34px rgba(0,0,0,.22), 0 0 26px rgba(255,216,111,.08);
+  transform: rotate(2deg);
+}
+
+.service-duck img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-duck-saju { transform: rotate(-2deg); }
+.service-duck-combo { transform: rotate(1deg); }
+.service-duck-konkretnyy-vopros {
+  flex-basis: 122px;
+  width: 122px;
+  height: 122px;
+  transform: rotate(-1deg);
+}
+
+.service-card:hover .service-duck {
+  border-color: rgba(255,216,111,.5);
+  box-shadow: 0 18px 38px rgba(0,0,0,.28), 0 0 34px rgba(255,216,111,.13);
+}
+
+.service-title-with-duck {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.service-title-with-duck h1 {
+  margin-bottom: 0;
+}
+
+.service-hero-duck {
+  flex: 0 0 124px;
+  width: 124px;
+  height: 124px;
+  object-fit: cover;
+  overflow: hidden;
+  border: 1px solid rgba(255,216,111,.28);
+  border-radius: 32px;
+  background: #f8eee8;
+  box-shadow: 0 18px 38px rgba(0,0,0,.24), 0 0 30px rgba(255,216,111,.1);
+  transform: rotate(2deg);
+}
+
+@media (max-width: 620px) {
+  .service-card-head { gap: 10px; }
+
+  .service-duck {
+    flex-basis: 92px;
+    width: 92px;
+    height: 92px;
+    margin-right: -6px;
+    border-radius: 24px;
+  }
+
+  .service-duck-konkretnyy-vopros {
+    flex-basis: 96px;
+    width: 96px;
+    height: 96px;
+  }
+
+  .service-title-with-duck {
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .service-hero-duck {
+    flex-basis: 88px;
+    width: 88px;
+    height: 88px;
+    border-radius: 22px;
+  }
+}
