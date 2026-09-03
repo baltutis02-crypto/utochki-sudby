@@ -22,7 +22,7 @@ export default function NatalPage() {
             Подробный персональный разбор без копипаста из справочника аспектов.
             Собираем карту в одну историю и смотрим, как её темы проявляются именно у тебя.
           </p>
-          <div className="price-row"><strong>от 4 990 ₽</strong><span>PDF + личный кабинет</span></div>
+          <div className="price-row"><strong>1 700 ₽</strong><span>PDF + личный кабинет</span></div>
           <Link className="button primary" href="/login">Заказать разбор</Link>
         </div>
         <div className="service-box">
