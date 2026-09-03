@@ -54,6 +54,22 @@ export default function ReadingsPage() {
             </div>
             <p>В примере — любовь и ценности, а ещё карьерная реализация и сильные качества.</p>
             <div className="example-pages">
+              <NatalVenusSample />
+              <NatalCareerSample />
+            </div>
+            <Link className="button ghost example-cta" href="/razbory/natalnaya-karta">Посмотреть Наталку подробнее</Link>
+          </article>
+
+          <article className="example-showcase-card">
+            <div className="example-card-head">
+              <div>
+                <p className="eyebrow">Корейская система</p>
+                <h3>Саджу</h3>
+              </div>
+              <span>1 500 ₽</span>
+            </div>
+            <p>В примере — баланс пяти элементов, энергетический профиль, деньги и реализация.</p>
+            <div className="example-pages">
               <SajuEnergySample />
               <SajuMoneySample />
             </div>
@@ -62,7 +78,8 @@ export default function ReadingsPage() {
         </div>
 
         <p className="example-note">
-          Это фрагменты реальных разборов, собранные прямо на сайте без персональных данных. В готовом заказе ты получаешь цельную персональную книгу в PDF.
+          Это фрагменты реальных разборов, собранные прямо на сайте без персональных данных.
+          В готовом заказе ты получаешь цельную персональную книгу в PDF.
         </p>
       </section>
     </main>
