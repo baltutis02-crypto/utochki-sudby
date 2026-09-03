@@ -292,3 +292,86 @@
     border-radius: 15px;
   }
 }
+
+
+/* 2026-09-03: make mascots and real examples unmistakably visible */
+.service-card {
+  position: relative;
+  overflow: hidden;
+}
+.service-duck {
+  flex: 0 0 138px;
+  width: 138px;
+  height: 138px;
+  margin: -16px -12px 0 0;
+  border-radius: 34px;
+  background: #f8eee8;
+}
+.service-duck-konkretnyy-vopros {
+  flex-basis: 148px;
+  width: 148px;
+  height: 148px;
+}
+.service-duck img,
+.service-hero-duck {
+  display: block;
+}
+.service-title-with-duck {
+  align-items: center;
+}
+.service-hero-duck {
+  width: 142px;
+  height: 142px;
+  flex: 0 0 142px;
+}
+.card-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.card-links a:first-child {
+  color: var(--gold);
+}
+.card-links a:hover {
+  color: white;
+}
+#natal-example,
+#saju-example {
+  scroll-margin-top: 28px;
+}
+.example-showcase-card:target {
+  border-color: rgba(255,216,111,.55);
+  box-shadow: 0 26px 80px rgba(0,0,0,.38), 0 0 42px rgba(255,216,111,.12);
+}
+.example-page img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 360 / 509;
+  object-fit: cover;
+  background: #f4e9e1;
+}
+@media (max-width: 620px) {
+  .service-duck {
+    flex-basis: 104px;
+    width: 104px;
+    height: 104px;
+    margin: -8px -8px 0 0;
+    border-radius: 25px;
+  }
+  .service-duck-konkretnyy-vopros {
+    flex-basis: 110px;
+    width: 110px;
+    height: 110px;
+  }
+  .service-hero-duck {
+    width: 96px;
+    height: 96px;
+    flex-basis: 96px;
+  }
+  .card-links {
+    gap: 8px;
+  }
+}
