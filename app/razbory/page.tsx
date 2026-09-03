@@ -14,7 +14,7 @@ export default function ReadingsPage() {
       </p>
       <div className="cards three reading-grid">
         {services.map((service) => (
-          <article className="service-card" key={service.slug}>
+          <article className={`service-card ${service.slug === "konkretnyy-vopros" ? "question-card" : ""}`} key={service.slug}>
             <p className="eyebrow">{service.eyebrow}</p>
             <h2>{service.title}</h2>
             <p>{service.description}</p>
