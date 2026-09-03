@@ -334,3 +334,201 @@ h3 { font-size: 22px; }
   .back-link { margin-bottom: 35px; }
   .price-row { align-items: flex-start; flex-direction: column; gap: 3px; }
 }
+
+
+/* cabinet prototypes */
+.cabinet-topline,
+.cabinet-heading,
+.order-card-top,
+.order-meta,
+.chat-head,
+.admin-stats,
+.auth-actions {
+  display: flex;
+  align-items: center;
+}
+
+.cabinet-topline { justify-content: space-between; margin-bottom: 42px; }
+.cabinet-topline .back-link { margin-bottom: 0; }
+.role-pill {
+  border: 1px solid rgba(143,216,255,.3);
+  background: rgba(143,216,255,.08);
+  color: var(--blue);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.admin-role { color: var(--gold); border-color: rgba(255,216,111,.3); background: rgba(255,216,111,.07); }
+
+.cabinet-heading { justify-content: space-between; gap: 28px; margin-bottom: 34px; }
+.cabinet-heading h1 { margin-bottom: 15px; }
+.cabinet-heading .lead { margin-bottom: 0; }
+
+.cabinet-layout {
+  display: grid;
+  grid-template-columns: minmax(290px, .72fr) minmax(0, 1.28fr);
+  gap: 18px;
+  align-items: start;
+}
+.order-list { display: grid; gap: 12px; }
+.order-card {
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 20px;
+  background: rgba(18,16,40,.7);
+  transition: border-color .2s ease, transform .2s ease;
+}
+.order-card:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.22); }
+.order-card.active {
+  border-color: rgba(255,143,231,.45);
+  background: linear-gradient(135deg, rgba(255,143,231,.1), rgba(143,216,255,.05));
+}
+.order-card-top { justify-content: space-between; gap: 12px; }
+.order-card h2 { font-size: 22px; margin: 18px 0 8px; }
+.order-card > p { color: var(--muted); margin: 0 0 20px; font-size: 13px; }
+.order-number { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.order-meta { justify-content: space-between; gap: 12px; padding-top: 15px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+.order-card.active .order-meta span:last-child { color: var(--pink); }
+
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 27px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+.status-chip.working { color: var(--blue); background: rgba(143,216,255,.11); border: 1px solid rgba(143,216,255,.2); }
+.status-chip.ready { color: #a9f2c2; background: rgba(90,220,140,.1); border: 1px solid rgba(90,220,140,.2); }
+.status-chip.new { color: var(--gold); background: rgba(255,216,111,.11); border: 1px solid rgba(255,216,111,.22); }
+.status-chip.waiting { color: var(--pink); background: rgba(255,143,231,.1); border: 1px solid rgba(255,143,231,.2); }
+
+.chat-panel {
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  overflow: hidden;
+  background: rgba(14,12,32,.76);
+  box-shadow: var(--shadow);
+}
+.chat-head {
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px 22px;
+  border-bottom: 1px solid var(--line);
+}
+.chat-head h2 { margin: 6px 0 0; font-size: 22px; }
+
+.chat-thread {
+  min-height: 330px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(255,143,231,.055), transparent 50%),
+    rgba(4,4,14,.25);
+}
+.message {
+  max-width: 78%;
+  border-radius: 18px;
+  padding: 12px 14px 9px;
+  border: 1px solid var(--line);
+}
+.message span { display: block; font-size: 10px; font-weight: 900; color: var(--pink); margin-bottom: 5px; }
+.message p { margin: 0; font-size: 13px; color: #ebe8f7; }
+.message small { display: block; margin-top: 7px; color: #827d9b; font-size: 9px; text-align: right; }
+.message.mine,
+.message.client { align-self: flex-end; background: rgba(143,216,255,.09); }
+.message.mine span,
+.message.client span { color: var(--blue); }
+.message.admin { align-self: flex-start; background: rgba(255,143,231,.08); }
+.message.system {
+  align-self: center;
+  max-width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 3px;
+}
+.message.system p { color: #817b98; font-size: 10px; }
+
+.chat-compose {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  padding: 16px;
+  border-top: 1px solid var(--line);
+}
+.chat-compose input {
+  min-width: 0;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0 14px;
+  color: var(--text);
+  background: rgba(255,255,255,.04);
+  outline: none;
+}
+.chat-compose input:focus { border-color: rgba(255,143,231,.45); }
+.chat-compose button {
+  border: 0;
+  border-radius: 14px;
+  padding: 0 16px;
+  font-weight: 900;
+  color: #190c1e;
+  background: linear-gradient(135deg, var(--pink), var(--gold));
+  cursor: pointer;
+}
+.prototype-note {
+  margin: 0;
+  padding: 0 18px 16px;
+  color: #77718f;
+  font-size: 10px;
+}
+
+.admin-stats { gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+.admin-stats span {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 10px 13px;
+  color: var(--muted);
+  font-size: 11px;
+  background: rgba(255,255,255,.03);
+}
+.admin-stats strong { color: var(--gold); font-size: 18px; margin-right: 4px; }
+.client-data {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.client-data > div { padding: 14px; background: #121027; }
+.client-data span { display: block; color: #817b98; font-size: 9px; text-transform: uppercase; letter-spacing: .07em; }
+.client-data strong { display: block; margin-top: 4px; font-size: 12px; }
+.admin-thread { min-height: 255px; }
+
+.auth-actions { gap: 10px; flex-wrap: wrap; margin-top: 26px; }
+
+@media (max-width: 900px) {
+  .cabinet-layout { grid-template-columns: 1fr; }
+  .order-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .client-data { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 620px) {
+  .cabinet-topline { margin-bottom: 30px; }
+  .cabinet-heading { display: block; }
+  .cabinet-heading > .button { margin-top: 20px; }
+  .order-list { grid-template-columns: 1fr; }
+  .chat-head { align-items: flex-start; }
+  .message { max-width: 90%; }
+  .chat-compose { grid-template-columns: 1fr; }
+  .chat-compose button { min-height: 42px; }
+  .admin-stats { justify-content: flex-start; margin-top: 20px; }
+  .client-data { grid-template-columns: 1fr 1fr; }
+}
