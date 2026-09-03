@@ -638,3 +638,104 @@ h3 { font-size: 22px; }
 @media (max-width: 620px) {
   .question-note { margin-top: 45px; padding: 24px 22px; }
 }
+
+
+/* Legal pages */
+.legal-page {
+  padding-block: 58px 110px;
+}
+.legal-hero {
+  max-width: 920px;
+  margin-bottom: 34px;
+}
+.legal-hero h1 {
+  margin-bottom: 18px;
+  font-size: clamp(40px, 6vw, 68px);
+}
+.legal-date {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.legal-card {
+  max-width: 920px;
+  padding: clamp(24px, 4vw, 46px);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255,143,231,.06), transparent 34rem),
+    rgba(18,16,40,.78);
+  box-shadow: var(--shadow);
+}
+.legal-card section {
+  padding-top: 28px;
+  margin-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.legal-card h2 {
+  margin-bottom: 18px;
+  font-size: clamp(24px, 3vw, 34px);
+}
+.legal-card h3 {
+  margin-top: 26px;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+.legal-card p,
+.legal-card li {
+  color: #d8d3e8;
+}
+.legal-card p {
+  margin: 0 0 14px;
+}
+.legal-card ul {
+  margin: 10px 0 18px;
+  padding-left: 22px;
+}
+.legal-card li + li {
+  margin-top: 8px;
+}
+.legal-card strong {
+  color: var(--text);
+}
+.inline-legal-link {
+  color: var(--gold);
+  text-decoration: underline;
+  text-decoration-color: rgba(255,216,111,.35);
+  text-underline-offset: 3px;
+}
+.inline-legal-link:hover {
+  color: white;
+}
+.legal-details {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(255,255,255,.03);
+}
+.legal-details p:last-child {
+  margin-bottom: 0;
+}
+.legal-related {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 34px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+@media (max-width: 620px) {
+  .legal-page {
+    padding-block: 34px 78px;
+  }
+  .legal-card {
+    padding: 22px 18px;
+    border-radius: 22px;
+  }
+  .legal-card section {
+    padding-top: 22px;
+    margin-top: 22px;
+  }
+}
