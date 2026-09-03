@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = { title: "Саджу" };
@@ -39,6 +40,30 @@ export default function SajuPage() {
           Напиши вопрос при заказе — я разберу его отдельно в рамках основного Саджу.
           Если вопроса нет, делаю обычный полный разбор по программе.
         </p>
+      </section>
+
+      <section className="reading-example-section">
+        <div className="reading-example-head">
+          <p className="eyebrow">Пример готовой работы</p>
+          <h2>Как выглядит книга Саджу</h2>
+          <p>
+            Это реальные внутренние страницы персонального 10-страничного разбора.
+            Обложка и паспорт карты с датой, временем и местом рождения в публичный пример не попадают.
+          </p>
+        </div>
+
+        <div className="reading-example-grid">
+          <a className="example-page large" href="/examples/saju-energy.webp" target="_blank" rel="noreferrer">
+            <Image src="/examples/saju-energy.webp" width={360} height={509} alt="Пример разбора Саджу: энергетический профиль и баланс пяти элементов" />
+            <span>Энергетический профиль · баланс пяти элементов</span>
+          </a>
+          <a className="example-page large" href="/examples/saju-money.webp" target="_blank" rel="noreferrer">
+            <Image src="/examples/saju-money.webp" width={360} height={509} alt="Пример разбора Саджу: деньги и реализация" />
+            <span>Деньги и реализация</span>
+          </a>
+        </div>
+
+        <p className="example-note">Нажми на страницу — она откроется отдельно крупнее.</p>
       </section>
 
       <section className="section no-x">
