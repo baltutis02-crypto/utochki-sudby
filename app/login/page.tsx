@@ -7,13 +7,16 @@ export default function LoginPage() {
     <main className="auth-page">
       <div className="auth-card">
         <Link className="brand auth-brand" href="/">🦆 <strong>Уточки судьбы</strong></Link>
-        <p className="eyebrow">Личный кабинет</p>
-        <h1>Заказы будут жить здесь</h1>
+        <p className="eyebrow">Вход для клиента</p>
+        <h1>Все твои разборы — в одном кабинете</h1>
         <p>
-          На следующем этапе подключим регистрацию, вход по e-mail, восстановление пароля
-          и безопасное хранение заказов.
+          После подключения авторизации здесь будет вход по e-mail, восстановление пароля
+          и доступ только к твоим заказам, чатам и готовым PDF.
         </p>
-        <Link className="button primary" href="/razbory">Пока выбрать разбор</Link>
+        <div className="auth-actions">
+          <Link className="button primary" href="/cabinet">Посмотреть прототип кабинета</Link>
+          <Link className="button ghost" href="/razbory">Выбрать разбор</Link>
+        </div>
       </div>
     </main>
   );
