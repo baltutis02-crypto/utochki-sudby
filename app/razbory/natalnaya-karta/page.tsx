@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = { title: "Натальная карта" };
@@ -39,6 +40,30 @@ export default function NatalPage() {
           Укажи её при заказе — я разберу этот вопрос отдельно в рамках основного разбора.
           Если отдельного вопроса нет, просто делаю полный разбор по программе.
         </p>
+      </section>
+
+      <section className="reading-example-section">
+        <div className="reading-example-head">
+          <p className="eyebrow">Пример готовой работы</p>
+          <h2>Как выглядит натальная книга</h2>
+          <p>
+            Это реальные внутренние страницы персонального 10-страничного разбора.
+            Первая страница и паспорт карты с персональными данными здесь специально не публикуются.
+          </p>
+        </div>
+
+        <div className="reading-example-grid">
+          <a className="example-page large" href="/examples/natal-venus.webp" target="_blank" rel="noreferrer">
+            <Image src="/examples/natal-venus.webp" width={360} height={509} alt="Пример натального разбора: Венера в Рыбах, любовь, близость и ценности" />
+            <span>Венера в Рыбах · любовь, близость и ценности</span>
+          </a>
+          <a className="example-page large" href="/examples/natal-career.webp" target="_blank" rel="noreferrer">
+            <Image src="/examples/natal-career.webp" width={360} height={509} alt="Пример натального разбора: карьера и реализация" />
+            <span>Карьера и реализация</span>
+          </a>
+        </div>
+
+        <p className="example-note">Нажми на страницу — она откроется отдельно крупнее.</p>
       </section>
 
       <section className="section no-x">
