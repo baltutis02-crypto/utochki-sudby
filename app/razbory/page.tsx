@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { services } from "@/lib/site";
+import { NatalVenusSample, NatalCareerSample, SajuEnergySample, SajuMoneySample } from "@/components/ReadingSamples";
 
 export const metadata = { title: "Разборы" };
 
@@ -54,43 +54,15 @@ export default function ReadingsPage() {
             </div>
             <p>В примере — любовь и ценности, а ещё карьерная реализация и сильные качества.</p>
             <div className="example-pages">
-              <a className="example-page" href="/examples/natal-venus.webp" target="_blank" rel="noreferrer">
-                <Image src="/examples/natal-venus.webp" width={360} height={509} alt="Пример страницы натальной карты: Венера в Рыбах" />
-                <span>Венера · любовь</span>
-              </a>
-              <a className="example-page" href="/examples/natal-career.webp" target="_blank" rel="noreferrer">
-                <Image src="/examples/natal-career.webp" width={360} height={509} alt="Пример страницы натальной карты: карьера и реализация" />
-                <span>Карьера · реализация</span>
-              </a>
-            </div>
-            <Link className="button ghost example-cta" href="/razbory/natalnaya-karta">Посмотреть Наталку подробнее</Link>
-          </article>
-
-          <article className="example-showcase-card">
-            <div className="example-card-head">
-              <div>
-                <p className="eyebrow">Корейская система</p>
-                <h3>Саджу</h3>
-              </div>
-              <span>1 500 ₽</span>
-            </div>
-            <p>В примере — баланс пяти элементов, энергетический профиль, деньги и реализация.</p>
-            <div className="example-pages">
-              <a className="example-page" href="/examples/saju-energy.webp" target="_blank" rel="noreferrer">
-                <Image src="/examples/saju-energy.webp" width={360} height={509} alt="Пример страницы Саджу: энергетический профиль" />
-                <span>Пять элементов</span>
-              </a>
-              <a className="example-page" href="/examples/saju-money.webp" target="_blank" rel="noreferrer">
-                <Image src="/examples/saju-money.webp" width={360} height={509} alt="Пример страницы Саджу: деньги и реализация" />
-                <span>Деньги · реализация</span>
-              </a>
+              <SajuEnergySample />
+              <SajuMoneySample />
             </div>
             <Link className="button ghost example-cta" href="/razbory/saju">Посмотреть Саджу подробнее</Link>
           </article>
         </div>
 
         <p className="example-note">
-          Нажми на любую страницу, чтобы открыть её отдельно. В готовом заказе ты получаешь цельную персональную книгу в PDF.
+          Это фрагменты реальных разборов, собранные прямо на сайте без персональных данных. В готовом заказе ты получаешь цельную персональную книгу в PDF.
         </p>
       </section>
     </main>
