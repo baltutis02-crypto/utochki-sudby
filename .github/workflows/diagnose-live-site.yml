@@ -1,0 +1,46 @@
+name: Diagnose live site
+
+on:
+  push:
+    branches: [diag-site]
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: DNS and HTTP diagnostics
+        run: |
+          set +e
+          echo "=== DATE ==="
+          date -u
+          echo
+          echo "=== DNS A ==="
+          dig +short A utochki-sudby.ru
+          echo
+          echo "=== DNS AAAA ==="
+          dig +short AAAA utochki-sudby.ru
+          echo
+          echo "=== DNS CNAME ==="
+          dig +short CNAME utochki-sudby.ru
+          echo
+          echo "=== DNS NS ==="
+          dig +short NS utochki-sudby.ru
+          echo
+          echo "=== WWW DNS ==="
+          dig +short A www.utochki-sudby.ru
+          dig +short CNAME www.utochki-sudby.ru
+          echo
+          echo "=== HTTPS custom domain ==="
+          curl -vkIL --max-time 25 https://utochki-sudby.ru/ 2>&1
+          echo
+          echo "=== HTTP custom domain ==="
+          curl -vIL --max-time 25 http://utochki-sudby.ru/ 2>&1
+          echo
+          echo "=== HTTPS www ==="
+          curl -vkIL --max-time 25 https://www.utochki-sudby.ru/ 2>&1
+          echo
+          echo "=== Default GitHub Pages URL ==="
+          curl -vkIL --max-time 25 https://baltutis02-crypto.github.io/utochki-sudby/ 2>&1
+          echo
+          echo "=== BODY custom domain first 40 lines ==="
+          curl -ksSL --max-time 25 https://utochki-sudby.ru/ | head -40
