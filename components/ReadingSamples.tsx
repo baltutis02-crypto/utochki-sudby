@@ -1,5 +1,7 @@
+import type { ReactNode } from "react";
+
 type SampleFrameProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   label: string;
 };
 
@@ -16,7 +18,7 @@ function SampleFrame({ children, label }: SampleFrameProps) {
   );
 }
 
-function SampleTitle({ children, subtitle }: { children: React.ReactNode; subtitle: string }) {
+function SampleTitle({ children, subtitle }: { children: ReactNode; subtitle: string }) {
   return (
     <>
       <h4 className="sample-title">{children}</h4>
@@ -26,7 +28,7 @@ function SampleTitle({ children, subtitle }: { children: React.ReactNode; subtit
   );
 }
 
-function Duck({ children = "🐥" }: { children?: React.ReactNode }) {
+function Duck({ children = "🐥" }: { children?: ReactNode }) {
   return <div className="sample-duck">{children}</div>;
 }
 
