@@ -2,7 +2,6 @@ import Link from "next/link";
 import { processSteps, services } from "@/lib/site";
 import { heroImage } from "@/lib/heroImage";
 import { aboutImage } from "@/lib/aboutImage";
-import { readingPreviewImage } from "@/lib/readingPreviewImage";
 import ReadingServiceCardHead from "@/components/ReadingServiceCardHead";
 import styles from "./home-about.module.css";
 
@@ -109,7 +108,7 @@ export default function HomePage() {
         <div className={styles.previewArtWrap} aria-hidden="true">
           <img
             className={styles.previewArt}
-            src={readingPreviewImage}
+            src="/reading-preview-hq.webp"
             alt=""
           />
         </div>
