@@ -1,23 +1,23 @@
 import Link from "next/link";
-import { services } from "@/lib/site";
+import { servicesKo } from "@/lib/site-ko";
 import ReadingServiceCardHead from "@/components/ReadingServiceCardHead";
 
-export const metadata = { title: "Разборы" };
+export const metadata = { title: "분석 | Уточки судьбы" };
 
-export default function ReadingsPage() {
+export default function KoreanReadingsPage() {
   return (
-    <main className="inner-page shell">
+    <main className="inner-page shell" lang="ko">
       <div style={{ display: "flex", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
-        <Link className="back-link" href="/">← На главную</Link>
-        <Link className="back-link" href="/ko/razbory">한국어 →</Link>
+        <Link className="back-link" href="/ko">← 한국어 메인</Link>
+        <Link className="back-link" href="/razbory">Русский →</Link>
       </div>
-      <p className="eyebrow">Разборы</p>
-      <h1>Выбирай систему, а не уровень тревоги</h1>
+      <p className="eyebrow">개인 맞춤 분석</p>
+      <h1>불안의 정도 말고, 보고 싶은 방식을 고르세요</h1>
       <p className="lead narrow">
-        Здесь будут точный состав, сроки, примеры страниц, отзывы и финальная цена каждого формата.
+        각 형식이 무엇을 다루는지, 가격은 얼마인지, 어떤 결과물을 받는지 한눈에 볼 수 있어요.
       </p>
       <div className="cards three reading-grid">
-        {services.map((service) => (
+        {servicesKo.map((service) => (
           <article className={`service-card ${service.slug === "konkretnyy-vopros" ? "question-card" : ""}`} key={service.slug}>
             <ReadingServiceCardHead
               slug={service.slug}
@@ -29,9 +29,9 @@ export default function ReadingsPage() {
             <div className="card-bottom">
               <strong>{service.price}</strong>
               {service.slug !== "combo" ? (
-                <Link href={`/razbory/${service.slug}`}>Открыть →</Link>
+                <Link href={`/ko/razbory/${service.slug}`}>열기 →</Link>
               ) : (
-                <span>скоро</span>
+                <span>곧 추가돼요</span>
               )}
             </div>
           </article>

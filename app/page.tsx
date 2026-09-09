@@ -20,6 +20,7 @@ export default function HomePage() {
           <Link href="/razbory">Разборы</Link>
           <a href="#products">Уточки</a>
           <a href="#about">Обо мне</a>
+          <Link href="/ko">한국어</Link>
           <Link className="nav-cta" href="/cabinet">Личный кабинет</Link>
         </nav>
       </header>
