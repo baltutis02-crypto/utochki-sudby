@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { heroImage } from "@/lib/heroImage";
 import { aboutImage } from "@/lib/aboutImage";
+import { readingPreviewFinal } from "@/lib/readingPreviewFinal";
 import { processStepsKo, servicesKo } from "@/lib/site-ko";
 import ReadingServiceCardHead from "@/components/ReadingServiceCardHead";
 import styles from "../home-about.module.css";
@@ -112,7 +113,7 @@ export default function KoreanHomePage() {
         <div className={styles.previewArtWrap} aria-hidden="true">
           <img
             className={styles.previewArt}
-            src="/reading-preview-hq.webp"
+            src={readingPreviewFinal}
             alt=""
           />
         </div>
