@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { heroImage } from "@/lib/heroImage";
 import { aboutImage } from "@/lib/aboutImage";
+import { readingPreviewImage } from "@/lib/readingPreviewImage";
 import { processStepsKo, servicesKo } from "@/lib/site-ko";
 import ReadingServiceCardHead from "@/components/ReadingServiceCardHead";
 import styles from "../home-about.module.css";
@@ -109,16 +110,12 @@ export default function KoreanHomePage() {
           </p>
           <Link className="button ghost" href="/ko/razbory">분석 구성 보기</Link>
         </div>
-        <div className="paper-stack" aria-hidden="true">
-          <div className="paper p3" />
-          <div className="paper p2" />
-          <div className="paper p1">
-            <span>УТОЧКИ СУДЬБЫ</span>
-            <h3>나만의 개인 해석</h3>
-            <i />
-            <i />
-            <i className="short" />
-          </div>
+        <div className={styles.previewArtWrap} aria-hidden="true">
+          <img
+            className={styles.previewArt}
+            src={readingPreviewImage}
+            alt=""
+          />
         </div>
       </section>
 
