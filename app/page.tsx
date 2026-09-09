@@ -2,6 +2,7 @@ import Link from "next/link";
 import { processSteps, services } from "@/lib/site";
 import { heroImage } from "@/lib/heroImage";
 import ReadingServiceCardHead from "@/components/ReadingServiceCardHead";
+import styles from "./home-about.module.css";
 
 export default function HomePage() {
   return (
@@ -134,8 +135,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section shell about" id="about">
-        <div className="portrait">АС</div>
+      <section className={`section shell about ${styles.aboutWithArt}`} id="about">
+        <div className={styles.artWrap}>
+          <img
+            className={styles.art}
+            src="/nastya-ducks-about.webp"
+            alt="Настя в звёздной мастерской вместе с утятами Уточек судьбы"
+          />
+        </div>
         <div>
           <p className="eyebrow">Кто всё это придумал</p>
           <h2>Привет, я Настя.</h2>
