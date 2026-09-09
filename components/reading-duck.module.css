@@ -1,9 +1,10 @@
 .mascot {
   display: block;
-  width: 118px;
-  height: 94px;
-  flex: 0 0 118px;
-  margin: -12px -4px -2px 0;
+  width: 116px;
+  height: 116px;
+  flex: 0 0 116px;
+  margin: -18px -8px -8px 0;
+  object-fit: contain;
   overflow: visible;
   filter: drop-shadow(0 12px 18px rgba(0, 0, 0, .24));
   transform-origin: center;
@@ -34,22 +35,23 @@
 }
 
 .homeMascot {
-  width: 106px;
-  height: 84px;
-  flex-basis: 106px;
+  width: 104px;
+  height: 104px;
+  flex-basis: 104px;
+  margin-top: -14px;
 }
 
 @media (max-width: 900px) {
   .mascot {
-    width: 110px;
-    height: 88px;
-    flex-basis: 110px;
+    width: 108px;
+    height: 108px;
+    flex-basis: 108px;
   }
 
   .homeMascot {
-    width: 100px;
-    height: 80px;
-    flex-basis: 100px;
+    width: 98px;
+    height: 98px;
+    flex-basis: 98px;
   }
 }
 
@@ -61,8 +63,8 @@
   .mascot,
   .homeMascot {
     width: 88px;
-    height: 70px;
+    height: 88px;
     flex-basis: 88px;
-    margin: -7px -4px 0 0;
+    margin: -8px -4px -2px 0;
   }
 }
