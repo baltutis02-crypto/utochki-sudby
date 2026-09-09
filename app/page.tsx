@@ -2,6 +2,7 @@ import Link from "next/link";
 import { processSteps, services } from "@/lib/site";
 import { heroImage } from "@/lib/heroImage";
 import { aboutImage } from "@/lib/aboutImage";
+import { readingPreviewImage } from "@/lib/readingPreviewImage";
 import ReadingServiceCardHead from "@/components/ReadingServiceCardHead";
 import styles from "./home-about.module.css";
 
@@ -105,16 +106,12 @@ export default function HomePage() {
           </p>
           <Link className="button ghost" href="/razbory">Смотреть состав разборов</Link>
         </div>
-        <div className="paper-stack" aria-hidden="true">
-          <div className="paper p3" />
-          <div className="paper p2" />
-          <div className="paper p1">
-            <span>УТОЧКИ СУДЬБЫ</span>
-            <h3>Твой персональный разбор</h3>
-            <i />
-            <i />
-            <i className="short" />
-          </div>
+        <div className={styles.previewArtWrap} aria-hidden="true">
+          <img
+            className={styles.previewArt}
+            src={readingPreviewImage}
+            alt=""
+          />
         </div>
       </section>
 

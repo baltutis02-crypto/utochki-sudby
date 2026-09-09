@@ -29,6 +29,34 @@
   object-fit: cover;
 }
 
+.previewArtWrap {
+  min-height: 400px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.previewArtWrap::before {
+  content: "";
+  position: absolute;
+  width: 74%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 216, 111, .16), rgba(255, 143, 231, .08) 44%, transparent 70%);
+  filter: blur(10px);
+}
+
+.previewArt {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: min(470px, 100%);
+  height: auto;
+  border-radius: 24px;
+  filter: drop-shadow(0 28px 34px rgba(0, 0, 0, .42));
+  transform: rotate(1.2deg);
+}
+
 @media (max-width: 900px) {
   .aboutWithArt {
     grid-template-columns: 1fr;
@@ -38,10 +66,27 @@
   .artWrap {
     width: min(680px, 100%);
   }
+
+  .previewArtWrap {
+    min-height: 360px;
+  }
+
+  .previewArt {
+    width: min(520px, 88vw);
+  }
 }
 
 @media (max-width: 620px) {
   .artWrap {
     border-radius: 22px;
+  }
+
+  .previewArtWrap {
+    min-height: 300px;
+  }
+
+  .previewArt {
+    width: min(420px, 94vw);
+    border-radius: 18px;
   }
 }
