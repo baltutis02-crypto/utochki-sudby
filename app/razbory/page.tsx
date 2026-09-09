@@ -7,7 +7,10 @@ export const metadata = { title: "Разборы" };
 export default function ReadingsPage() {
   return (
     <main className="inner-page shell">
-      <Link className="back-link" href="/">← На главную</Link>
+      <div style={{ display: "flex", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
+        <Link className="back-link" href="/">← На главную</Link>
+        <Link className="back-link" href="/ko/razbory">한국어 →</Link>
+      </div>
       <p className="eyebrow">Разборы</p>
       <h1>Выбирай систему, а не уровень тревоги</h1>
       <p className="lead narrow">
