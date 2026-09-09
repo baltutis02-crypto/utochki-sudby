@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { processSteps, services } from "@/lib/site";
 import { heroImage } from "@/lib/heroImage";
+import ReadingServiceCardHead from "@/components/ReadingServiceCardHead";
 
 export default function HomePage() {
   return (
@@ -58,8 +59,13 @@ export default function HomePage() {
         <div className="cards three">
           {services.map((service) => (
             <article className={`service-card ${service.slug === "konkretnyy-vopros" ? "question-card" : ""}`} key={service.slug}>
-              <p className="eyebrow">{service.eyebrow}</p>
-              <h3>{service.title}</h3>
+              <ReadingServiceCardHead
+                slug={service.slug}
+                eyebrow={service.eyebrow}
+                title={service.title}
+                headingLevel="h3"
+                home
+              />
               <p>{service.description}</p>
               <div className="card-bottom">
                 <strong>{service.price}</strong>
