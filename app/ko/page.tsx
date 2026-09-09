@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { heroImage } from "@/lib/heroImage";
+import { aboutImage } from "@/lib/aboutImage";
 import { processStepsKo, servicesKo } from "@/lib/site-ko";
 import ReadingServiceCardHead from "@/components/ReadingServiceCardHead";
 import styles from "../home-about.module.css";
@@ -144,7 +145,7 @@ export default function KoreanHomePage() {
         <div className={styles.artWrap}>
           <img
             className={styles.art}
-            src="/nastya-ducks-about.webp"
+            src={aboutImage}
             alt="별빛 작업실에서 오리들과 함께 있는 나스탸"
           />
         </div>
